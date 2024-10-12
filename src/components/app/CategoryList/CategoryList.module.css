@@ -1,0 +1,59 @@
+.dynamicCodeText {
+  color: #ccc;
+  position: relative;
+}
+
+.dynamicCodeText::before,
+.dynamicCodeText::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
+}
+
+.dynamicCodeText::after {
+  left: auto;
+  right: 0;
+}
+
+.listItem {
+  background: #0000002c;
+  padding: 14px 10px;
+  border-radius: 5px;
+  border: 1px solid #1a1a1a56;
+  transition: all 0.3s ease-in-out;
+}
+.listItem:active {
+  transform: scale(0.97);
+}
+
+.listItem:hover {
+  background: #0000002c;
+  border-color: #ffffff42;
+}
+
+.activeListItem,
+.activeListItem:hover {
+  background: #00000042;
+  border-color: #ffffff86;
+}
+
+.listItem > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.nextButtonContainer {
+  /* background: var(--primaryDark2); */
+  background: #575270;
+}
+
+.nextBtn {
+  margin: auto;
+  border-radius: 10px;
+  width: 200px;
+}

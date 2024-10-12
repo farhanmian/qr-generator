@@ -1,0 +1,11 @@
+.button:hover {
+  box-shadow: 0 0 12px #c0b7e87a;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.btnSecondary:disabled {
+  color: gray;
+}

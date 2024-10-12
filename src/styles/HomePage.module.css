@@ -1,0 +1,31 @@
+.heading {
+  background: linear-gradient(to right bottom, #c0b7e8, #8176af);
+  width: max-content;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.generateBtn {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.generateBtn svg {
+  animation: move 1.5s ease-in-out infinite;
+}
+
+@keyframes move {
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+.qrImage {
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
