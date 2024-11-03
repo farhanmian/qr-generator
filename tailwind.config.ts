@@ -16,6 +16,7 @@ const config: Config = {
         primary: "#343045",
         primaryDark: "#221f30",
         secondary: "#C0B7E8",
+        purpleLight: "#453e61"
       },
     },
   },
