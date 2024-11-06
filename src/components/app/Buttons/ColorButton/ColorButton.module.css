@@ -1,0 +1,51 @@
+.colorPickerContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 4px;
+  }
+
+  .colorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border : 1px solid gray;
+    border-radius: 4px;
+    padding: 0px 4px;
+  }
+  
+  .hexInput {
+    width: 90px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    height: 40px;
+
+  }
+
+  .hexInput:focus{
+    border: none;
+    outline: none;
+  }
+  
+  .colorInput {
+    background-color: white;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+
+  
+  .colorDisplay {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+  }
+  

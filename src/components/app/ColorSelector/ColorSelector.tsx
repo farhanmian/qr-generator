@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ColorSelector.module.css";
+import ColorButton from "../Buttons/ColorButton/ColorButton";
+import OuterBody from "../Forms/OuterBody/OuterBody";
 
 
 const colors = [
@@ -19,30 +21,43 @@ const colors = [
 
 const ColorSelector = () => {
 
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const colorHandler = (val:string,label:string) =>{
+    console.log(val,"VALUEEEE",label)
+  }
+  
+
   return (
-    <div className={styles.container}>
-      <div className="flex bg-primary py-4 border- border-2">
-        <p className="mr-4 ml-2">Logo</p>
-        <p className="">Design & customize your Vcard</p>
-      </div>
+
+    <div className="w-[100%] flex justify-center">
+      <OuterBody heading="Design & customize your Vcard" logo="logo" > 
+       {/* Inner body */}
       <div className="bg-purpleLight h-[400px] pl-[64px] pt-2">
         Personalize your Card by selecting colors and uploading an image.
         <div className="flex pt-10">
           Colors ?:
           <div className="ml-6 grid grid-cols-5 gap-10 justify-between">
-            {/* color 1 */}
-
             {colors.map((cur) => {
               return (
-                <div key={cur.id} className="flex justify-center bg-gray-300 w-16 h-16">
+                <div onClick={() => {setSelectedColor(cur.color)}} key={cur.id} className={`cursor-pointer flex justify-center bg-gray-300 w-16 h-16 border-2  hover:border-2 hover:border-black ${selectedColor == cur.color ? "border-black" : ""}`}>
                   <div style={{ backgroundColor: cur.color }} className="w-[80%] h-6 mt-2"></div>
                 </div>
               );
             })}
           </div>
         </div>
+        
+        {/* Input for color selection */}
+            <div className="ml-6 pl-[64px] flex justify-between w-[80%]">
+              <ColorButton label="Primary" colorValue={colorHandler} />
+              <ColorButton label="Button" colorValue={colorHandler} />
+            </div>
       </div>
+      
+      </OuterBody>
     </div>
+   
   );
 };
 
