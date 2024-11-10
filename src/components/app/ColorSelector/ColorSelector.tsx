@@ -33,7 +33,7 @@ const ColorSelector = () => {
     <div className="w-[100%] flex justify-center">
       <OuterBody heading="Design & customize your Vcard" logo="logo" > 
        {/* Inner body */}
-      <div className="bg-purpleLight h-[400px] pl-[64px] pt-2">
+      <div className="bg-purpleLight h-[400px] pl-[55px] pt-2">
         Personalize your Card by selecting colors and uploading an image.
         <div className="flex pt-10">
           Colors ?:

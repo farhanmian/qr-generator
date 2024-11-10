@@ -1,5 +1,6 @@
 'use client'
 import ColorSelector from '@/components/app/ColorSelector/ColorSelector';
+import VCardForm from '@/components/app/Forms/VCard/VCardForm';
 import React from 'react';
 
 const VcardPage = ({ params }: { params: { slug: string } }) => {
@@ -12,14 +13,9 @@ const VcardPage = ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className='flex justify-center'>
-      {slug ? `Vcard for: ${slug}` : "No slug provided"}
-
-     
+    <div className='flex flex-col flex-1 justify-center items-center'>
       <ColorSelector />
-      <form>
-        
-      </form>
+      <VCardForm />
     </div>
   );
 }
