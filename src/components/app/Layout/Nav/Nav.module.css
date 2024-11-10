@@ -1,0 +1,39 @@
+.nav {
+  padding: 10px;
+  background-image: linear-gradient(
+    to bottom,
+    #42384c,
+    var(--primaryDark),
+    var(--primaryDark2)
+  );
+  box-shadow: 0 0 10px 0 #42384c;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.linkContainer a {
+  font-size: 19px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.linkContainer a::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+  left: 0;
+  bottom: 0;
+}
+
+.linkContainer a:hover::before {
+  width: 100%;
+}
