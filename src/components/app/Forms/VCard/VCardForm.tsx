@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import OuterBody from "../OuterBody/OuterBody";
 import BasicInput from "../../Inputs/BasicInput/BasicInput";
 import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
 import { Controller, useForm } from "react-hook-form";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
+import { toast } from "react-toastify";
+import ColorSelector from "../../ColorSelector/ColorSelector";
+
+interface ColorType {
+  background?: string;
+  primary?: string;
+  button?: string;
+}
 
 const VCardForm = () => {
   const {
@@ -12,6 +20,12 @@ const VCardForm = () => {
     control,
     formState: { errors },
   } = useForm(); // Ensure control is included
+  const [colorState, setColorState] = useState<ColorType>({
+    background: "",
+    button: "",
+    primary: "",
+  });
+
   const submitHandler = async (data: any) => {
     console.log(data, "DATAAAA"); // This should log the form data
     const formData = new FormData();
@@ -20,12 +34,25 @@ const VCardForm = () => {
       formData.append(key, data[key]);
     }
 
-    const response = await createVcard(data);
-    console.log(response, "RESPONSEEEEE");
+    const styling = JSON.stringify(colorState);
+    const body = { ...data, styling };
+    // return;
+    const response = await createVcard(body);
+
+    if (response.status == 201) {
+      toast.success("Vcard created Successfully.");
+    }
+  };
+
+  const colorHandler = (val: string, label: string) => {
+    setColorState((prv) => {
+      return { ...prv, [label]: val };
+    });
   };
 
   return (
-    <div className="w-[100%] flex justify-center pb-20">
+    <div className="w-[100%] flex flex-col flex-1 justify-center items-center">
+      <ColorSelector colorPass={colorHandler} />
       <OuterBody logo="Info" heading="Your Information" className={"mb-20"}>
         <div className="bg-purpleLight pl-[55px] pb-20">
           Fill in your contact details. Not all fields are mandatory.
