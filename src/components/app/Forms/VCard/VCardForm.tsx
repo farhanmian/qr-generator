@@ -38,9 +38,10 @@ const VCardForm = () => {
     const body = { ...data, styling };
     // return;
     const response = await createVcard(body);
-
+    console.log(response, "response", response.status);
     if (response.status == 201) {
-      toast.success("Vcard created Successfully.");
+      console.log("INSIDEEEE", response);
+      toast.success("Success", { autoClose: false });
     }
   };
 

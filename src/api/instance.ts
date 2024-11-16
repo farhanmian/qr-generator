@@ -12,15 +12,13 @@ const instance = axios.create({
 const authInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
   timeout: 1000,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
 
 // Middleware to append the token from cookies to the headers for authenticated requests
 authInstance.interceptors.request.use(
   (config) => {
     const token = Cookies.get("token"); // Get the token from cookies
+    console.log(token, "tokentoken");
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`; // Set the Authorization header
     }
