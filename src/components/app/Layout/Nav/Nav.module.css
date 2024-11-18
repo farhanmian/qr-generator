@@ -14,14 +14,14 @@
   height: auto;
 }
 
-.linkContainer a {
+.linkContainer .link {
   font-size: 19px;
   font-weight: 600;
   position: relative;
   padding-bottom: 4px;
 }
 
-.linkContainer a::before {
+.linkContainer .link::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -34,6 +34,6 @@
   bottom: 0;
 }
 
-.linkContainer a:hover::before {
+.linkContainer .link:hover::before {
   width: 100%;
 }

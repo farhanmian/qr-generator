@@ -1,5 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 // Create a base Axios instance for general API requests
 const instance = axios.create({
