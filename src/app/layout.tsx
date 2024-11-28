@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/app/Layout/Nav/Nav";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SiteProgressBar from "@/components/partials/SiteProgressBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         {children}
         <ToastContainer />
       </body>
+      <SiteProgressBar />
     </html>
   );
 }

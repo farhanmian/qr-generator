@@ -22,6 +22,7 @@ import {
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { useRouter } from "next/navigation";
 import { SelectedItem } from "@/utils/types/types";
+import Link from "next/link";
 const list = [
   {
     title: "Website",
@@ -165,14 +166,16 @@ const CategoryList = () => {
       <div
         className={`fixed bottom-0 w-full left-0 py-2 flex justify-center ${styles.nextButtonContainer}`}
       >
-        <ButtonPrimary
-          theme="secondary"
-          className={styles.nextBtn}
-          disabled={!selectedItem}
-          onClick={() => selectHandler(selectedItem!.link)}
-        >
-          Next
-        </ButtonPrimary>
+        <Link href={selectedItem ? `/create/${selectedItem?.link}` : "/create"}>
+          <ButtonPrimary
+            theme="secondary"
+            className={styles.nextBtn}
+            disabled={!selectedItem}
+            // onClick={() => selectHandler(selectedItem!.link)}
+          >
+            Next
+          </ButtonPrimary>
+        </Link>
       </div>
     </div>
   );
