@@ -5,6 +5,22 @@ import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
 import { Controller, useForm } from "react-hook-form";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
+import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
+import ColorSelector from "../../ColorSelector/ColorSelector";
+
+const formFields = [
+  { name: "firstName", placeholder: "First Name" },
+  { name: "lastName", placeholder: "Last Name" },
+  { name: "mobile", placeholder: "Mobile Number" },
+  { name: "phone", placeholder: "Phone" },
+  { name: "fax", placeholder: "Fax" },
+  { name: "email", placeholder: "Email" },
+  { name: "company", placeholder: "Company" },
+  { name: "yourJob", placeholder: "Your Job" },
+  { name: "address", placeholder: "Address" },
+  { name: "website", placeholder: "Website" },
+  { name: "summary", placeholder: "Summary", col: "col-span-2" },
+];
 
 const VCardForm = () => {
   const {
@@ -25,147 +41,9 @@ const VCardForm = () => {
   };
 
   return (
-    <div className="w-[100%] flex justify-center pb-20">
-      <OuterBody logo="Info" heading="Your Information" className={"mb-20"}>
-        <div className="bg-purpleLight pl-[55px] pb-20">
-          Fill in your contact details. Not all fields are mandatory.
-          {/* Image Box */}
-          <form onSubmit={handleSubmit(submitHandler)}>
-            {/* Title */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Title:</p>
-              <Controller
-                name="title"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicInput
-                    field={field}
-                    placeholder="Title Number"
-                    className={"w-[450px]"}
-                  />
-                )}
-              />
-            </div>
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Name:</p>
-              <div className="flex gap-3">
-                <Controller
-                  name="firstName"
-                  control={control} // Ensure control is passed
-                  render={({ field }) => (
-                    <BasicInput field={field} placeholder="First Name" />
-                  )}
-                />
-                <Controller
-                  name="lastName"
-                  control={control} // Ensure control is passed
-                  render={({ field }) => (
-                    <BasicInput field={field} placeholder="Last Name" />
-                  )}
-                />
-              </div>
-            </div>
-            {/* Mobile Number */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Mobile:</p>
-              <Controller
-                name="contact"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicInput
-                    type="tel"
-                    field={field}
-                    placeholder="Mobile Number"
-                    className={"w-[450px]"}
-                  />
-                )}
-              />
-            </div>
-            {/* Email */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Email:</p>
-              <Controller
-                name="email"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicInput
-                    type="email"
-                    field={field}
-                    placeholder="Email"
-                    className={"w-[250px]"}
-                  />
-                )}
-              />
-            </div>
-            {/* Company details */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Company:</p>
-              <div className="flex gap-3">
-                <Controller
-                  name="company"
-                  control={control} // Ensure control is passed
-                  render={({ field }) => (
-                    <BasicInput field={field} placeholder="Company" />
-                  )}
-                />
-                <Controller
-                  name="yourJob"
-                  control={control} // Ensure control is passed
-                  render={({ field }) => (
-                    <BasicInput field={field} placeholder="Your Job" />
-                  )}
-                />
-              </div>
-            </div>
-            {/* Address */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Address:</p>
-              <Controller
-                name="address"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicInput
-                    field={field}
-                    placeholder="Address"
-                    className={"w-[450px]"}
-                  />
-                )}
-              />
-            </div>
-            {/* Website */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Website:</p>
-              <Controller
-                name="website"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicInput
-                    field={field}
-                    placeholder="Website"
-                    className={"w-[450px]"}
-                  />
-                )}
-              />
-            </div>
-            {/* Summary */}
-            <div className="mt-8 flex w-[90%] flex-1">
-              <p className="w-[140px]">Summary:</p>
-              <Controller
-                name="summary"
-                control={control} // Ensure control is passed
-                render={({ field }) => (
-                  <BasicTextArea
-                    field={field}
-                    placeholder="Summary"
-                    className={"w-[450px]"}
-                  />
-                )}
-              />
-            </div>
-            <ButtonPrimary type="submit">Submit</ButtonPrimary>
-          </form>
-        </div>
-      </OuterBody>
+    <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
+      <ColorSelector />
+      <FormPrimary fields={formFields} />
     </div>
   );
 };
