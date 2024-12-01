@@ -7,6 +7,7 @@ import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import ColorSelector from "../../ColorSelector/ColorSelector";
+import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -44,6 +45,8 @@ const VCardForm = () => {
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
       <ColorSelector />
       <FormPrimary fields={formFields} />
+      <AddSocialMediaChannel />
+
     </div>
   );
 };
