@@ -44,3 +44,27 @@ h1 {
   font-size: 56px;
   font-weight: 700;
 }
+
+.ant-collapse{
+  border-radius: 14px;
+  border-color: var(--primary);
+  overflow: hidden;
+}
+
+.ant-collapse-header{
+  color: #fff !important;
+  background-color: #343045;
+  border-radius: 0px !important;
+}
+
+.ant-collapse-content{
+  border-radius: 0px 0px 14px 14px !important;
+  overflow: hidden;
+  background-color: var(--primaryFormBg) !important;
+  border-top: none !important;
+}
+
+
+.ant-collapse-content-box{
+  padding: 0px !important;
+}

@@ -8,6 +8,7 @@ import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import ColorSelector from "../../ColorSelector/ColorSelector";
 import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
+import { Collapse } from "antd";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -45,7 +46,11 @@ const VCardForm = () => {
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
       <ColorSelector />
       <FormPrimary fields={formFields} />
-      <AddSocialMediaChannel />
+      <Collapse
+      size="large"
+      items={[{ key: '1', label: 'Social Media', children: <AddSocialMediaChannel /> }]}
+    />
+      
 
     </div>
   );
