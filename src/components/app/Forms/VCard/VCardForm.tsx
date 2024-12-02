@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import OuterBody from "../OuterBody/OuterBody";
 import BasicInput from "../../Inputs/BasicInput/BasicInput";
 import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
@@ -8,7 +8,9 @@ import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import ColorSelector from "../../ColorSelector/ColorSelector";
 import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
-import { Collapse } from "antd";
+import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
+import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
+import IconEdit from "@/components/icons/IconEdit";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -25,11 +27,13 @@ const formFields = [
 ];
 
 const VCardForm = () => {
+
   const {
     handleSubmit,
     control,
     formState: { errors },
   } = useForm(); // Ensure control is included
+
   const submitHandler = async (data: any) => {
     console.log(data, "DATAAAA"); // This should log the form data
     const formData = new FormData();
@@ -44,12 +48,9 @@ const VCardForm = () => {
 
   return (
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
-      <ColorSelector />
+      <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector />} prependIcon={<IconEdit />} />
       <FormPrimary fields={formFields} />
-      <Collapse
-      size="large"
-      items={[{ key: '1', label: 'Social Media', children: <AddSocialMediaChannel /> }]}
-    />
+     <CustomCollapse label="Social Media" content={<AddSocialMediaChannel/>} prependIcon={<IconSpeakerPhone />} />
       
 
     </div>

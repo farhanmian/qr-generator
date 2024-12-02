@@ -59,7 +59,7 @@ export default function AddSocialMediaLinks() {
                         prepend={channel.type}
                       />
                       <button
-                        className="w-5 h-5 text-[#989898]"
+                        className="w-5 h-5 text-[#989898] hover:text-white"
                         onClick={() => handleRemoveChannel(channel.id)}
                       >
                         <IconX />
