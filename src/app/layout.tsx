@@ -24,8 +24,8 @@ export default function RootLayout({
         <Nav />
         {children}
         <ToastContainer />
+        <SiteProgressBar />
       </body>
-      <SiteProgressBar />
     </html>
   );
 }
