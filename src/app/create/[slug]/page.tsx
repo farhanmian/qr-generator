@@ -11,8 +11,14 @@ const VcardPage = ({ params }: { params: { slug: string } }) => {
   const submitHandler = () => {};
 
   return (
-    <div className="flex flex-col flex-1 justify-center items-center">
+    // <div className="flex flex-col flex-1 justify-center items-center">
+    //   <ColorSelector />
+    //   <VCardForm />
+    // </div>
+
+    <div className="innerContainer flex flex-1 justify-between gap-x-6 pt-20">
       <VCardForm />
+      <div className="max-w-lg w-full primaryFormBg " />
     </div>
   );
 };
