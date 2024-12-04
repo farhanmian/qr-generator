@@ -14,6 +14,8 @@ import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse"
 import IconEdit from "@/components/icons/IconEdit";
 import { IconFileText, IconListDetails } from "@tabler/icons-react";
 import FormTitleInput from "../../Inputs/FormTitleInput";
+import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
+import IconSettings from "@/components/icons/IconSettings";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -81,6 +83,10 @@ const VCardForm = () => {
     console.log(color,"TEST")
   }
 
+  const handleAddShareButton = (val:boolean) =>{
+    console.log(val)
+  }
+
 
   return (
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 ">
@@ -96,6 +102,8 @@ const VCardForm = () => {
       />
 
      <CustomCollapse label="Social Media" content={<AddSocialMediaChannel/>} prependIcon={<IconSpeakerPhone />}  defaultOpen/>
+     <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
+
 
     </div>
   );

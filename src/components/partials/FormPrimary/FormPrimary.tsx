@@ -8,7 +8,6 @@ type FormFieldType = {
   col?: string;
   textArea?: boolean;
   rows?: number;
-  label?:string
 }[];
 
 const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
@@ -27,7 +26,6 @@ const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
           <BasicInput
             key={index}
             name={item.name}
-            label={item?.label}
             placeholder={item.placeholder}
             containerClassName={item.col ? item.col : "col-span-1"}
             textArea={item.textArea}

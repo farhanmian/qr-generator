@@ -113,3 +113,20 @@ h1 {
   text-align: center;
  color: #fff !important;
 }
+
+.custom-checkbox{
+  transition: all .2s;
+}
+
+.custom-checkbox-container:has(.custom-checkbox-label:hover) .custom-checkbox {
+  border-color: var(--secondary);
+}
+
+.custom-checkbox-checked{
+  background-color: #12a648;
+  border-color: #12a648;
+}
+
+.custom-checkbox-checked:hover{
+  border-color: #12a648 !important;
+}
