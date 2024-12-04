@@ -39,8 +39,7 @@ export default function AddSocialMediaLinks() {
           {Boolean(socialMediaLinks.length) && (
             <div className="flex flex-col gap-y-2 ">
               {socialMediaLinks.map((channel, i) => (
-                <div>
-                  <div className="flex gap-x-3 items-center mt-2">
+                  <div className="flex gap-x-3 items-center mt-2" key={i}>
                     <div
                       className={`${
                         channel.name === "Snapchat" && style.snapchatLogo
@@ -66,31 +65,35 @@ export default function AddSocialMediaLinks() {
                       </button>
                     </div>
                   </div>
-                </div>
               ))}
             </div>
           )}
 
-          <div className="mt-2">
+          <div className="mt-4 flex">
             <div className={`${style.descriptionContainer} `}>
-              <h5>Add More</h5>
-              <p>Click on the icon to add a social media profile.</p>
+              <h5 className="text-nowrap ">Add More: </h5>
             </div>
 
-            <ul className={`${style.linksContainer}`}>
-              {socialMedia.map((channel, i) => (
-                <li
-                  key={i}
-                  className={`${style.channel}`}
-                  onClick={() => handleAddChannel(channel)}
-                >
-                  <button className={`${style.channelButton}`}>
-                    {channel.icon()}{" "}
-                  </button>
-                  <span className={`${style.channelName}`}>{channel.name}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="ml-8 max-w-[450px]">
+              <p className="text-[14px] font-medium">Click on the icon to add a social media profile.</p>
+
+              <ul className={`${style.linksContainer}`}>
+                {socialMedia.map((channel, i) => (
+                  <li
+                    key={i}
+                    className={`${style.channel}`}
+                    onClick={() => handleAddChannel(channel)}
+                  >
+                    <button className={`${style.channelButton}`}>
+                      {channel.icon()}{" "}
+                    </button>
+                    <span className={`${style.channelName}`}>
+                      {channel.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
