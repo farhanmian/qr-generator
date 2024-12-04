@@ -12,7 +12,7 @@ export default function ColorSelectorDefaulColor({color , selected,handleClick ,
   return (
     <div
     onClick={handleClick}
-    className={`${selected ? 'border-[#12a648]' : ' hover:border-[var(--secondary)]'} relative  p-2 rounded-md cursor-pointer flex flex-col justify-between items-end  bg-[#322f40] w-16 h-16 shadow-md border border-[#322f40] transition-all `}
+    className={`${selected ? 'border-[#12a648]' : 'border-[#322f40] hover:border-[var(--secondary)]'} relative  p-2 rounded-md cursor-pointer flex flex-col justify-between items-end  bg-[#322f40] w-16 h-16 shadow-md border  transition-all `}
   >
     {selected && <div className='bg-[#12a648] h-5 w-5 p-1 rounded-full absolute top-[-10px] right-[-10px] text-white'>{IconCheck()}</div>}
     <div

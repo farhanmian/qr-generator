@@ -6,6 +6,9 @@ type FormFieldType = {
   name: string;
   placeholder: string;
   col?: string;
+  textArea?: boolean;
+  rows?: number;
+  label?:string
 }[];
 
 const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
@@ -15,7 +18,7 @@ const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
   const classes = className;
   return (
     <form
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 border border-primary rounded-xl shadow-xl ${
+      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
         classes || ""
       }`}
     >
@@ -24,8 +27,12 @@ const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
           <BasicInput
             key={index}
             name={item.name}
+            label={item?.label}
             placeholder={item.placeholder}
             containerClassName={item.col ? item.col : "col-span-1"}
+            textArea={item.textArea}
+            rows={item.rows}
+            // inputClass={"resize-none"}
           />
         ))}
     </form>

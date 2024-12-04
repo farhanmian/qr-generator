@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import IconChevronDown from '@/components/icons/IconChevronDown';
-import IconSpeakerPhone from '@/components/icons/IconSpeakerPhone';
-import { Collapse } from 'antd';
-import React, { useState } from 'react';
+import IconChevronDown from "@/components/icons/IconChevronDown";
+import { Collapse } from "antd";
+import React, { useState } from "react";
 
 interface CollapseIconProps {
   rotate: string;
@@ -21,6 +20,7 @@ interface CustomCollapseProps {
   label: string;
   content: React.ReactNode;
   prependIcon?: React.ReactNode;
+  defaultOpen?: boolean;
 }
 
 export default function CustomCollapse(props: CustomCollapseProps) {
@@ -45,6 +45,7 @@ export default function CustomCollapse(props: CustomCollapseProps) {
   return (
     <Collapse
       size="large"
+      defaultActiveKey={[props.defaultOpen ? "1" : "0"]}
       expandIcon={props.prependIcon ? expandIcon : undefined}
       activeKey={collapseActive ? '1' : undefined} 
       onChange={onCollapseChange} 

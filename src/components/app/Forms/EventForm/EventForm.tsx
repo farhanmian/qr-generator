@@ -16,23 +16,26 @@ import { IconFileText, IconListDetails } from "@tabler/icons-react";
 import FormTitleInput from "../../Inputs/FormTitleInput";
 
 const formFields = [
-  { name: "firstName", placeholder: "First Name" },
-  { name: "lastName", placeholder: "Last Name" },
-  { name: "mobile", placeholder: "Mobile Number" },
-  { name: "phone", placeholder: "Phone" },
-  { name: "fax", placeholder: "Fax" },
-  { name: "email", placeholder: "Email" },
-  { name: "company", placeholder: "Company" },
-  { name: "yourJob", placeholder: "Your Job" },
-  { name: "address", placeholder: "Address" },
-  { name: "website", placeholder: "Website" },
   {
-    name: "summary",
-    placeholder: "Summary",
+    name: "organizerName",
+    placeholder: "Organizer or Host Name",
     col: "col-span-2",
-    textArea: true,
-    rows: 5,
   },
+  { name: "eventName", placeholder: "Name of the Event", col: "col-span-2" },
+  {
+    name: "eventSummary",
+    placeholder: "Write a short summary about your event",
+    textArea: true,
+    rows: 4,
+    col: "col-span-2",
+  },
+  { name: "eventDate", placeholder: "Event Date" },
+  { name: "eventTime", placeholder: "Event Time" },
+  { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
+  { name: "contact", placeholder: "Contact person for the event" },
+  { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
+  { name: "email", placeholder: "Email eg: your@email.com" },
+  { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
 ];
 
 const colors = [
@@ -48,7 +51,8 @@ const colors = [
   { id: '10', primary: "#3f51b5", secondary: "#ff4081" }, // Light Green
 ];
 
-const VCardForm = () => {
+
+const EventForm = () => {
   const {
     handleSubmit,
     control,
@@ -66,7 +70,7 @@ const VCardForm = () => {
     const response = await createVcard(data);
     console.log(response, "RESPONSEEEEE");
   };
-  
+
   const colorSelectorConfig = {
     colors,
     type: 'button' as const,
@@ -83,10 +87,11 @@ const VCardForm = () => {
 
 
   return (
-    <div className="w-full flex flex-col gap-y-6 px-20 py-10 ">
-      <FormTitleInput placeholder="Name Of Your QR Code" />
+    <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
+      <FormTitleInput placeholder="Name Of Your Event" />
 
       <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector config={colorSelectorConfig} handleColorSelect={handleColorSelect} />} prependIcon={<IconEdit />} defaultOpen />
+
 
       <CustomCollapse
         label="Information"
@@ -95,10 +100,14 @@ const VCardForm = () => {
         defaultOpen
       />
 
-     <CustomCollapse label="Social Media" content={<AddSocialMediaChannel/>} prependIcon={<IconSpeakerPhone />}  defaultOpen/>
-
+      <CustomCollapse
+        label="Social Media"
+        content={<AddSocialMediaChannel />}
+        prependIcon={<IconSpeakerPhone />}
+        defaultOpen
+      />
     </div>
   );
 };
 
-export default VCardForm;
+export default EventForm;

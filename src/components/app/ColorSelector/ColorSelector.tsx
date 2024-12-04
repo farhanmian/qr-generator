@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ColorSelector.module.css";
 import ColorButton from "../Buttons/ColorButton/ColorButton";
-import OuterBody from "../Forms/OuterBody/OuterBody";
 import { ColorPicker, Tooltip } from "antd";
 import IconInfoCircleFilled from "@/components/icons/IconInfoCircleFilled";
 import ColorSelectorDefaulColor from "./ColorSelectorDefaulColor";
