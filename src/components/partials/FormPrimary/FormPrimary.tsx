@@ -6,6 +6,8 @@ type FormFieldType = {
   name: string;
   placeholder: string;
   col?: string;
+  textArea?: boolean;
+  rows?: number;
 }[];
 
 const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
@@ -26,6 +28,9 @@ const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
             name={item.name}
             placeholder={item.placeholder}
             containerClassName={item.col ? item.col : "col-span-1"}
+            textArea={item.textArea}
+            rows={item.rows}
+            // inputClass={"resize-none"}
           />
         ))}
     </form>
