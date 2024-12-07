@@ -18,19 +18,19 @@ const authInstance = axios.create({
 });
 
 // Middleware to append the token from cookies to the headers for authenticated requests
-authInstance.interceptors.request.use(
-  (config) => {
-    const token = Cookies.get("token"); // Get the token from cookies
-    console.log(token, "tokentoken");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`; // Set the Authorization header
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+// authInstance.interceptors.request.use(
+//   (config) => {
+//     const token = Cookies.get("token"); // Get the token from cookies
+//     console.log(token, "tokentoken");
+//     if (token) {
+//       config.headers["Authorization"] = `Bearer ${token}`; // Set the Authorization header
+//     }
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
 // Create an Axios instance for FormData requests
 const formDataInstance = axios.create({
@@ -43,18 +43,18 @@ const formDataInstance = axios.create({
 });
 
 // Middleware to append the token from cookies to the headers for FormData requests
-formDataInstance.interceptors.request.use(
-  (config) => {
-    const token = Cookies.get("token"); // Get the token from cookies
-    console.log(token, "TOKENNNNN");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`; // Set the Authorization header
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+// formDataInstance.interceptors.request.use(
+//   (config) => {
+//     const token = Cookies.get("token"); // Get the token from cookies
+//     console.log(token, "TOKENNNNN");
+//     if (token) {
+//       config.headers["Authorization"] = `Bearer ${token}`; // Set the Authorization header
+//     }
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
 export { instance, authInstance, formDataInstance }; // Export both instances for use in your application

@@ -6,8 +6,9 @@ interface getService {
   serviceId: string;
 }
 
-export const createVcard = async (body: CreateVcard) => {
-  const res = await authInstance.post("/vcard", body);
+export const createVcard = async (body: any) => {
+  const res = await formDataInstance.post("/vcard", body);
+
   console.log(res, "RESPONSEEEE_SAP");
   return res;
 };

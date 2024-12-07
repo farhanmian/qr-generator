@@ -19,8 +19,8 @@ const formFields = [
   { name: "firstName", placeholder: "First Name" },
   { name: "lastName", placeholder: "Last Name" },
   { name: "mobile", placeholder: "Mobile Number" },
-  { name: "phone", placeholder: "Phone" },
-  { name: "fax", placeholder: "Fax" },
+  { name: "contact", placeholder: "Contact" },
+  { name: "title", placeholder: "Title" },
   { name: "email", placeholder: "Email" },
   { name: "company", placeholder: "Company" },
   { name: "yourJob", placeholder: "Your Job" },
@@ -51,8 +51,9 @@ const VCardForm = () => {
 
     const styling = JSON.stringify(colorState);
     const body = { ...data, styling };
+
     // return;
-    const response = await createVcard(body);
+    const response = await createVcard(formData);
     console.log(response, "response", response.status);
     if (response.status == 201) {
       console.log("INSIDEEEE", response);
@@ -69,7 +70,7 @@ const VCardForm = () => {
   return (
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
       <ColorSelector />
-      <FormPrimary fields={formFields} />
+      <FormPrimary submitHandler={submitHandler} fields={formFields} />
     </div>
   );
 };
