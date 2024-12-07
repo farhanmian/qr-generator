@@ -10,16 +10,19 @@ const PaymentPage = () => {
     e.preventDefault();
 
     try {
-      const order = await fetch("http://localhost:3001/razorpay/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: String(amountVal * 100),
-          currency: "INR",
-        }), // Multiply by 100 for paise
-      });
+      const order = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/order`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amount: String(amountVal * 100),
+            currency: "INR",
+          }), // Multiply by 100 for paise
+        }
+      );
 
       const orderRes = await order.json();
       console.log(orderRes, "orderRes");
@@ -29,19 +32,20 @@ const PaymentPage = () => {
           process.env.NEXT_PUBLIC_RAZORPAY_KEYID || "rzp_test_RVJIciHcmyPo0D", // Replace with your key
         amount: orderRes?.amount_due, // Amount in paise
         currency: orderRes?.currency,
-        name: "Acme Corp",
-        description: "Test Transaction",
+        name: "QR Genewrator",
+        description: "Enrolling in basic plan.",
         image: "https://example.com/your_logo",
         order_id: orderRes?.id, // Use dynamic order ID
-        callback_url: "http://localhost:3001/razorpay/verification",
+        callback_url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/verification`,
+        redirect: true,
         handler: (response) => {
           console.log(response);
           alert("Payment Successful!");
         },
         prefill: {
-          name: "Gaurav Kumar",
-          email: "gaurav.kumar@example.com",
-          contact: "9000090000",
+          name: "Salman hussain",
+          email: "salmanmian54321@gmail.com",
+          contact: "9548313059",
         },
         theme: {
           color: "#3399cc",

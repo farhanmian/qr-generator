@@ -11,7 +11,7 @@ const Service = async ({
   const token = cookieStore.get("token");
 
   console.log("TESTTTT", params);
-  const url = `http://localhost:3001/${params.service}/${params.serviceId}`;
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.service}/${params.serviceId}`;
   console.log(url, "URL_HEREEEE");
 
   const res = await fetch(
