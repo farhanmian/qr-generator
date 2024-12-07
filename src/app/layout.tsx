@@ -24,7 +24,6 @@ export default function RootLayout({
         <Nav />
         {children}
         <ToastContainer />
-        {/* <script src="https://checkout.razorpay.com/v1/checkout.js"></script> */}
       </body>
       <SiteProgressBar />
     </html>

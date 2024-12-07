@@ -7,13 +7,13 @@ import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
 import { toast } from "react-toastify";
 import ColorSelector from "../../ColorSelector/ColorSelector";
+import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 
 interface ColorType {
   background?: string;
   primary?: string;
   button?: string;
 }
-import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },

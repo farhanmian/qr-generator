@@ -7,10 +7,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
 
   login: async (payload: AuthFormData) => {
-    const res = await instance.post("/auth/login", payload, {
-      timeout: 5000,
-    });
-    console.log(res, "RESPONSE_HERE");
+    const res = await instance.post("/auth/login", payload);
   },
   signUp: async (payload: AuthFormData) => {
     const res = await instance.post("/auth/register", payload);
