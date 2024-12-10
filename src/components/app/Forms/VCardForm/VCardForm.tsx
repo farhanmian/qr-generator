@@ -38,16 +38,16 @@ const formFields = [
 ];
 
 const colors = [
-  { id: '1', primary: "#455a63", secondary: "#e91e63" }, // Gray
-  { id: '2', primary: "#0289d1", secondary: "#64b5f6" }, // Blue
-  { id: '3', primary: "#d42f2f", secondary: "#ef9a9a" }, // Red
-  { id: '4', primary: "#4cb04f", secondary: "#81c784" }, // Green
-  { id: '5', primary: "#785548", secondary: "#ff8a65" }, // Brown
-  { id: '6', primary: "#41a38b", secondary: "#e9b764" }, // Pink
-  { id: '7', primary: "#f564ad", secondary: "#36c17d" }, // Orange
-  { id: '8', primary: "#ff8a66", secondary: "#4b5d71" }, // Violet
-  { id: '9', primary: "#7a1fa1", secondary: "#1de9b6" }, // Purple
-  { id: '10', primary: "#3f51b5", secondary: "#ff4081" }, // Light Green
+  { id: "1", primary: "#455a63", secondary: "#e91e63" }, // Gray
+  { id: "2", primary: "#0289d1", secondary: "#64b5f6" }, // Blue
+  { id: "3", primary: "#d42f2f", secondary: "#ef9a9a" }, // Red
+  { id: "4", primary: "#4cb04f", secondary: "#81c784" }, // Green
+  { id: "5", primary: "#785548", secondary: "#ff8a65" }, // Brown
+  { id: "6", primary: "#41a38b", secondary: "#e9b764" }, // Pink
+  { id: "7", primary: "#f564ad", secondary: "#36c17d" }, // Orange
+  { id: "8", primary: "#ff8a66", secondary: "#4b5d71" }, // Violet
+  { id: "9", primary: "#7a1fa1", secondary: "#1de9b6" }, // Purple
+  { id: "10", primary: "#3f51b5", secondary: "#ff4081" }, // Light Green
 ];
 
 const VCardForm = () => {
@@ -68,43 +68,61 @@ const VCardForm = () => {
     const response = await createVcard(data);
     console.log(response, "RESPONSEEEEE");
   };
-  
+
   const colorSelectorConfig = {
     colors,
-    type: 'button' as const,
-    header: 'Personalize your Card by selecting colors and uploading an image.'
-  }
+    type: "button" as const,
+    header: "Personalize your Card by selecting colors and uploading an image.",
+  };
 
-  const handleColorSelect = (color:{
+  const handleColorSelect = (color: {
     id: string;
     primary: string;
     secondary?: string;
-}) => {
-    console.log(color,"TEST")
-  }
+  }) => {
+    console.log(color, "TEST");
+  };
 
-  const handleAddShareButton = (val:boolean) =>{
-    console.log(val)
-  }
-
+  const handleAddShareButton = (val: boolean) => {
+    console.log(val);
+  };
 
   return (
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 ">
       <FormTitleInput placeholder="Name Of Your QR Code" />
 
-      <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector config={colorSelectorConfig} handleColorSelect={handleColorSelect} />} prependIcon={<IconEdit />} defaultOpen />
+      <CustomCollapse
+        label="Design & Customize your vCard"
+        content={
+          <ColorSelector
+            config={colorSelectorConfig}
+            handleColorSelect={handleColorSelect}
+          />
+        }
+        prependIcon={<IconEdit />}
+        defaultOpen
+      />
 
       <CustomCollapse
         label="Information"
-        content={<FormPrimary fields={formFields} />}
+        content={
+          <FormPrimary submitHandler={submitHandler} fields={formFields} />
+        }
         prependIcon={<IconListDetails />}
         defaultOpen
       />
 
-     <CustomCollapse label="Social Media" content={<AddSocialMediaChannel/>} prependIcon={<IconSpeakerPhone />}  defaultOpen/>
-     <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
-
-
+      <CustomCollapse
+        label="Social Media"
+        content={<AddSocialMediaChannel />}
+        prependIcon={<IconSpeakerPhone />}
+        defaultOpen
+      />
+      <CustomCollapse
+        label="Advance Options"
+        content={<AddShareButton handleAddShareButton={handleAddShareButton} />}
+        prependIcon={<IconSettings />}
+      />
     </div>
   );
 };
