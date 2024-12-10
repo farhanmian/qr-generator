@@ -1,4 +1,4 @@
-import VCardForm from "@/components/app/Forms/VCard/VCardForm";
+import VCardForm from "@/components/app/Forms/VCardForm/VCardForm";
 import React from "react";
 
 export default function page() {

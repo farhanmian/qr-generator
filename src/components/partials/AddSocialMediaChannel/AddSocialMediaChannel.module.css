@@ -7,11 +7,11 @@
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
-  gap: 21px;
+  gap: 18px;
 }
 
 .descriptionContainer h5 {
-    font-weight: 600;
+    font-weight: 700;
     line-height: 28px;
 }
 
@@ -37,14 +37,13 @@
 }
 
 .channelButton {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 }
 
 .channelName {
     font-size: 14px;
   opacity: 0;
-  margin-top: 4px;
   width: 80px;
   color: var(--secondary);
   text-align: center;
