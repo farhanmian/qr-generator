@@ -13,8 +13,13 @@ import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/A
 import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import IconEdit from "@/components/icons/IconEdit";
-import { IconFileText, IconListDetails } from "@tabler/icons-react";
+import {
+  IconFidgetSpinner,
+  IconFileText,
+  IconListDetails,
+} from "@tabler/icons-react";
 import FormTitleInput from "../../Inputs/FormTitleInput";
+import WelcomeScreenLogo from "@/components/partials/WelcomeScreenLogo/WelcomeScreenLogo";
 
 const formFields = [
   {
@@ -80,6 +85,13 @@ const EventForm = () => {
         label="Social Media"
         content={<AddSocialMediaChannel />}
         prependIcon={<IconSpeakerPhone />}
+        defaultOpen
+      />
+
+      <CustomCollapse
+        label="Welcome Screen"
+        content={<WelcomeScreenLogo />}
+        prependIcon={<IconFidgetSpinner />}
         defaultOpen
       />
     </div>
