@@ -9,7 +9,7 @@ export default function VCardInformationSection({formFields}: { formFields: Form
     <div className='p-10'>
       <UpdateProfile toolTipText='Select an image for your vCard profile picture. Upload .jpg or .png file from your computer' />
       <Divider className='border-[#343045] my-[40px] mx-[20px] min-w-[auto] w-[auto]' />
-    <FormPrimary fields={formFields} />
+    <FormPrimary fields={formFields} submitHandler={()=>{}} />
     </div>
   )
 }

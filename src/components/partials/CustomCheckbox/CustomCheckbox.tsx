@@ -1,5 +1,5 @@
 'use client'
-import IconCheck from '@/components/icons/IconCheck'
+import { IconCheck } from '@tabler/icons-react'
 import React, { useEffect, useRef, useState } from 'react'
 
 interface CustomCheckboxProps {

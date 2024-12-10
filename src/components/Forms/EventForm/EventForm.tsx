@@ -5,14 +5,12 @@ import { Controller, useForm } from "react-hook-form";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
-import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import IconEdit from "@/components/icons/IconEdit";
-import { IconListDetails } from "@tabler/icons-react";
 import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-import IconSettings from "@/components/icons/IconSettings";
 import ColorSelector from "@/components/partials/ColorSelector/ColorSelector";
+import WelcomeScreenLogo from "@/components/partials/WelcomeScreenLogo/WelcomeScreenLogo";
 import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import { IconEdit, IconFidgetSpinner, IconListDetails, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
 
 const formFields = [
   {
@@ -97,20 +95,27 @@ const EventForm = () => {
 
       <CustomCollapse
         label="Information"
-        content={<FormPrimary fields={formFields} />}
-        prependIcon={<IconListDetails />}
+        content={<FormPrimary fields={formFields} submitHandler={()=>{}} />}
+        prependIcon={<IconListDetails size={24}   />}
         defaultOpen
       />
 
       <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
-        prependIcon={<IconSpeakerPhone />}
+        prependIcon={<IconSpeakerphone />}
         defaultOpen
       />
       
      <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
 
+
+      <CustomCollapse
+        label="Welcome Screen"
+        content={<WelcomeScreenLogo />}
+        prependIcon={<IconFidgetSpinner />}
+        defaultOpen
+      />
     </div>
   );
 };

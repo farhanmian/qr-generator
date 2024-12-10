@@ -2,10 +2,7 @@
 
 import { Avatar, Tooltip, Upload } from "antd";
 import React, { useEffect, useRef, useState } from "react";
-import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-import IconInfoCircleFilled from "@/components/icons/IconInfoCircleFilled";
-import IconPlus from "@/components/icons/IconPlus";
-import IconX from "@/components/icons/IconX";
+import { IconInfoCircleFilled, IconX } from "@tabler/icons-react";
 
 export default function UpdateProfile({
   toolTipText,
@@ -35,7 +32,7 @@ export default function UpdateProfile({
 
         <Tooltip title={toolTipText} color="#252525">
           <div className="h-6 w-6 cursor-pointer">
-            <IconInfoCircleFilled />
+            <IconInfoCircleFilled  size='100%'/>
           </div>
         </Tooltip>
       </div>
@@ -65,29 +62,20 @@ export default function UpdateProfile({
               </p>
             )}
           </div>
-          {/* <Avatar
-            onClick={() => inputRef.current?.click()}
-            size={84}
-            className="text-[12px] bg-[var(--primary)]  border border-gray-700 cursor-pointer"
-            src={
-          profileUrl && "https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg"
-            }
-          >
-            No Image Uploaded
-          </Avatar> */}
+          
           {Boolean(profileUrl) && (
             <button
               onClick={handleRemoveCurrentfile}
               className="h-5 w-5 bg-red-700 rounded-full p-[2px] flex items-center justify-center absolute top-0 right-0"
             >
-              <IconX />
+              <IconX size={'100%'} />
             </button>
           )}
         </div>
 
         <button
           onClick={() => inputRef.current?.click()}
-          className="bg-[var(--secondary)] px-3 py-1 rounded-[5px] text-[var(--primary)] font-medium transition-all hover:bg-[#d6d1f7]"
+          className="bg-[var(--secondary)] px-4 py-2 rounded-[5px] text-[var(--primary)] font-medium transition-all hover:bg-[#d6d1f7]"
         >
           Upload
         </button>

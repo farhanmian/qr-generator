@@ -20,7 +20,7 @@ const FormPrimary: React.FC<{
   return (
     <form
       onSubmit={handleSubmit(submitHandler)}
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
+      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg  rounded-xl  ${
         classes || ""
       }`}
     >

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ColorSelector.module.css";
 import { ColorPicker, Tooltip } from "antd";
-import IconInfoCircleFilled from "@/components/icons/IconInfoCircleFilled";
 import ColorSelectorDefaulColor from "./ColorSelectorDefaulColor";
+import { IconInfoCircleFilled } from "@tabler/icons-react";
 
 interface ColorSelectorProps {
   config: {
@@ -30,9 +30,9 @@ const ColorSelector = ({ config: { type, colors, header ,  }, handleColorSelect 
   },[selectedColor])
 
   return (
-    <div className="primaryFormBg rounded-xl p-10 w-full text-white">
+    <div className="primaryFormBg rounded-xl p-10 w-full text-white flex flex-col gap-y-5">
       <h2 className="font-semibold">{header}</h2>
-      <div className="flex pt-8 items-start">
+      <div className="flex mt-4 items-start">
         <div className="flex items-center gap-x-1">
           <p className="font-bold leading-[0.8]">Colors:</p>
 
@@ -41,7 +41,7 @@ const ColorSelector = ({ config: { type, colors, header ,  }, handleColorSelect 
             color="#252525"
           >
             <div className="h-6 w-6 cursor-pointer">
-              <IconInfoCircleFilled />
+              <IconInfoCircleFilled  size='100%'/>
             </div>
           </Tooltip>
         </div>

@@ -1,10 +1,4 @@
-import IconBrandFacebookFilled from "@/components/icons/IconBrandFacebookFilled";
-import IconWorld from "@/components/icons/IconWorld";
-import IconBrandXFilled from "@/components/icons/IconBrandXFilled";
-import IconBrandInstagram from "@/components/icons/IconBrandInstagram";
-import IconBrandLinkedin from "@/components/icons/IconBrandLinkedin";
-import IconBrandSnapchatFilled from "@/components/icons/IconBrandSnapchatFilled";
-import IconBrandTiktokFilled from "@/components/icons/IconBrandTiktokFilled";
+import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandLinkedin, IconBrandSnapchatFilled, IconBrandTiktokFilled, IconBrandXFilled, IconWorld } from "@tabler/icons-react";
 
 export const socialMedia = [
   {
