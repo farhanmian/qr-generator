@@ -3,8 +3,8 @@
 import { socialMedia } from "@/utils/constant";
 import style from "./AddSocialMediaChannel.module.css";
 import { useState } from "react";
-import BasicInput from "@/components/app/Inputs/BasicInput/BasicInput";
 import IconX from "@/components/icons/IconX";
+import BasicInput from "../Inputs/BasicInput/BasicInput";
 
 interface Channel {
   id: string;
@@ -71,7 +71,7 @@ export default function AddSocialMediaLinks() {
 
           <div className="mt-4 flex">
             <div className={`${style.descriptionContainer} `}>
-              <h5 className="text-nowrap ">Add More: </h5>
+              <h5 className="text-nowrap">Add More: </h5>
             </div>
 
             <div className="ml-8 max-w-[450px]">

@@ -1,23 +1,18 @@
 import React from "react";
 import styles from "./FormPrimary.module.css";
-import BasicInput from "@/components/app/Inputs/BasicInput/BasicInput";
+import BasicInput from "../Inputs/BasicInput/BasicInput";
+import { FormFieldType } from "@/utils/types/types";
 
-type FormFieldType = {
-  name: string;
-  placeholder: string;
-  col?: string;
-  textArea?: boolean;
-  rows?: number;
-}[];
 
-const FormPrimary: React.FC<{ className?: string; fields: FormFieldType }> = ({
+
+const FormPrimary: React.FC<{ className?: string; fields: FormFieldType[] }> = ({
   className,
   fields,
 }) => {
   const classes = className;
   return (
     <form
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
+      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg   ${
         classes || ""
       }`}
     >

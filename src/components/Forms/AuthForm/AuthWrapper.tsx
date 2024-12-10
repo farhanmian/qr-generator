@@ -5,7 +5,8 @@ import styles from "./AuthWrapper.module.css";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
-import { AuthFormData } from "../../../../store/types";
+import { AuthFormData } from "@/store/types";
+// import { AuthFormData } from "../../../../store/types";
 
 const formFields = [
   {

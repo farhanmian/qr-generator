@@ -89,7 +89,7 @@ h1 {
   width: 100%;
   padding: 6px 10px;
   background-color: #322f40;
-  border: 1px solid #322f40;
+  border: 1px solid #374151;
 }
 
 .ant-color-picker-trigger:hover{
@@ -129,4 +129,9 @@ h1 {
 
 .custom-checkbox-checked:hover{
   border-color: #12a648 !important;
+}
+
+.ant-avatar-string{
+  text-wrap: auto;
+  font-weight: 500;
 }
