@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import OuterBody from "../OuterBody/OuterBody";
+// import OuterBody from "../OuterBody/OuterBody";
 import BasicInput from "../../Inputs/BasicInput/BasicInput";
 import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
 import { Controller, useForm } from "react-hook-form";
@@ -69,7 +69,7 @@ const VCardForm = () => {
 
   return (
     <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
-      <ColorSelector />
+      {/* <ColorSelector /> */}
       <FormPrimary submitHandler={submitHandler} fields={formFields} />
     </div>
   );

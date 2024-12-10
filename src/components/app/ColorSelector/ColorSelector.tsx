@@ -1,58 +1,108 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ColorSelector.module.css";
 import ColorButton from "../Buttons/ColorButton/ColorButton";
-import OuterBody from "../Forms/OuterBody/OuterBody";
+import { ColorPicker, Tooltip } from "antd";
+import IconInfoCircleFilled from "@/components/icons/IconInfoCircleFilled";
+import ColorSelectorDefaulColor from "./ColorSelectorDefaulColor";
 
-const colors = [
-  { id: 1, color: "#808080" }, // Gray
-  { id: 2, color: "#0000FF" }, // Blue
-  { id: 3, color: "#FF0000" }, // Red
-  { id: 4, color: "#008000" }, // Green
-  { id: 5, color: "#A52A2A" }, // Brown
-  { id: 6, color: "#FFC0CB" }, // Pink
-  { id: 7, color: "#FFA500" }, // Orange
-  { id: 8, color: "#EE82EE" }, // Violet
-  { id: 9, color: "#800080" }, // Purple
-  { id: 10, color: "#90EE90" }, // Light Green
-];
+interface ColorSelectorProps {
+  config: {
+    type: 'custom' | 'button' | 'line';
+    colors: { id: string; primary: string; secondary?: string }[];
+    header: string;
+  };
+  handleColorSelect:(color:{
+    id: string;
+    primary: string;
+    secondary?: string;
+})=>void
 
-const ColorSelector = () => {
-  const [selectedColor, setSelectedColor] = useState("");
+}
+
+const ColorSelector = ({ config: { type, colors, header ,  }, handleColorSelect }: ColorSelectorProps) => {
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const colorHandler = (val: string, label: string) => {
     console.log(val, "VALUEEEE", label);
   };
 
+  useEffect(()=>{
+    handleColorSelect(selectedColor)
+  },[selectedColor])
+
   return (
-    <div className="primaryFormBg rounded-xl p-10 w-full border border-primary">
-      Personalize your Card by selecting colors and uploading an image.
-      <div className="flex pt-10">
-        Colors ?:
-        <div className="ml-6 grid grid-cols-5 gap-10 justify-between">
-          {colors.map((cur) => {
-            return (
-              <div
-                onClick={() => {
-                  setSelectedColor(cur.color);
-                }}
-                key={cur.id}
-                className={`cursor-pointer flex justify-center bg-gray-300 w-16 h-16 border-2  hover:border-2 hover:border-black ${
-                  selectedColor == cur.color ? "border-black" : ""
-                }`}
-              >
-                <div
-                  style={{ backgroundColor: cur.color }}
-                  className="w-[80%] h-6 mt-2"
-                ></div>
-              </div>
-            );
-          })}
+    <div className="primaryFormBg rounded-xl p-10 w-full text-white">
+      <h2 className="font-semibold">{header}</h2>
+      <div className="flex pt-8 items-start">
+        <div className="flex items-center gap-x-1">
+          <p className="font-bold leading-[0.8]">Colors:</p>
+
+          <Tooltip
+            title="Select a theme or choose your own color below."
+            color="#252525"
+          >
+            <div className="h-6 w-6 cursor-pointer">
+              <IconInfoCircleFilled />
+            </div>
+          </Tooltip>
         </div>
-      </div>
-      {/* Input for color selection */}
-      <div className="ml-6 pl-[64px] flex justify-between w-[80%]">
-        <ColorButton label="Primary" colorValue={colorHandler} />
-        <ColorButton label="Button" colorValue={colorHandler} />
+        <div className="flex flex-col ml-8">
+          <div className="grid grid-cols-5 gap-8 ">
+            {colors.map((cur, i) => {
+              return (
+                <ColorSelectorDefaulColor
+                  key={i}
+                  selected={Boolean(selectedColor.id === colors[i].id)}
+                  color={cur}
+                  handleClick={() => setSelectedColor(cur)}
+                  type={type}
+                />
+              );
+            })}
+          </div>
+
+          {/* Input for color selection */}
+          <div className="flex justify-between mt-8 ">
+            <div className="max-w-[161px] w-full">
+              <h6 className="mb-2 text-[1.1rem] font-semibold">Primary</h6>
+              <ColorPicker
+                format="hex"
+                className="shadow-md"
+                value={selectedColor.primary}
+                onChange={(e) =>
+                  setSelectedColor((prev) => ({
+                    ...prev,
+                    primary: "#" + e.toHex(),
+                    id: "99",
+                  }))
+                }
+                size="large"
+                showText
+              />
+            </div>
+            {type !== "custom" && (
+              <div className="max-w-[161px] w-full">
+                <h6 className="mb-2 text-[1.1rem] font-semibold">
+                  {type === "button" ? "Button" : "Secondary"}
+                </h6>
+                <ColorPicker
+                  format="hex"
+                  className="shadow-md"
+                  value={selectedColor.secondary}
+                  onChange={(e) =>
+                    setSelectedColor((prev) => ({
+                      ...prev,
+                      secondary: "#" + e.toHex(),
+                      id: "99",
+                    }))
+                  }
+                  size="large"
+                  showText
+                />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

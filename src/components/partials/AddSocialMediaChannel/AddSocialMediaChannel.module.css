@@ -1,0 +1,58 @@
+.social-media--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.linksContainer {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.descriptionContainer h5 {
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.descriptionContainer p {
+    font-size: 14px;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 48px;
+}
+
+.channel:hover {
+  color: var(--secondary);
+}
+
+.channel:hover .channelName {
+ opacity: 1;
+}
+
+.channelButton {
+  width: 28px;
+  height: 28px;
+}
+
+.channelName {
+    font-size: 14px;
+  opacity: 0;
+  width: 80px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+.snapchatLogo svg :last-child{
+    stroke: black;
+}
+
+/* .snapchatLogo svg:nth-child(2){
+    stroke: black;
+} */

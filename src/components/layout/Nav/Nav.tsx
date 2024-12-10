@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LoginForm from "../../Forms/Auth/LoginForm";
-import SignupForm from "../../Forms/Auth/SignupForm";
+import LoginForm from "@/components/app/Forms/Auth/LoginForm";
+import SignupForm from "@/components/app/Forms/Auth/SignupForm";
 
 const Nav = () => {
   return (

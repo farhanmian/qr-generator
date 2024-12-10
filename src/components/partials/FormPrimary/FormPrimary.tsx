@@ -7,6 +7,8 @@ type FormFieldType = {
   name: string;
   placeholder: string;
   col?: string;
+  textArea?: boolean;
+  rows?: number;
 }[];
 
 const FormPrimary: React.FC<{
@@ -25,7 +27,7 @@ const FormPrimary: React.FC<{
   return (
     <form
       onSubmit={handleSubmit(submitHandler)}
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 border border-primary rounded-xl shadow-xl ${
+      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
         classes || ""
       }`}
     >
@@ -44,6 +46,8 @@ const FormPrimary: React.FC<{
                 placeholder={item.placeholder}
                 containerClassName={item.col ? item.col : "col-span-1"}
                 className={"w-[450px]"}
+                textArea={item.textArea}
+                rows={item.rows}
               />
             )}
           />
