@@ -3,7 +3,7 @@
 import { socialMedia } from "@/utils/constant";
 import style from "./AddSocialMediaChannel.module.css";
 import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
-import BasicInput from "../Inputs/BasicInput/BasicInput";
+import BasicInput from "../../Inputs/BasicInput/BasicInput";
 import { Icon, IconProps, IconX } from "@tabler/icons-react";
 
 interface Channel {

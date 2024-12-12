@@ -4,7 +4,7 @@ import {
   IconReload,
 } from "@tabler/icons-react";
 import React, { useRef, useState } from "react";
-import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
+import ButtonPrimary from "../../ButtonPrimary/ButtonPrimary";
 import { Button, Tooltip } from "antd";
 
 const WelcomeScreenLogo = () => {
@@ -54,7 +54,7 @@ const WelcomeScreenLogo = () => {
           </div>
 
           <div className="flex flex-col gap-y-1 items-center">
-            <button onClick={()=> inputRef.current?.click()} className="bg-[var(--secondary)] px-4 py-2 text-lg rounded-[6px] flex items-center text-[var(--primary)] font-medium transition-all hover:bg-[#d6d1f7]">
+            <button onClick={()=> inputRef.current?.click()} className="bg-[var(--secondary)] px-[14px] py-[6px] text-lg rounded-[6px] flex items-center text-[var(--primary)] font-medium transition-all hover:bg-[#d6d1f7]">
             <IconReload className="mr-2" width={20} height={20} strokeWidth={2.5} /> Change 
             </button>
             <Button type="link" className="text-[var(--secondary)] font-normal text-[18px] transition-all p-0 hover:text-white">Preview</Button>

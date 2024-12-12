@@ -1,6 +1,5 @@
-import { Checkbox } from "antd";
-import React, { useRef, useState } from "react";
-import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
+import React  from "react";
+import CustomCheckbox from "../../CustomCheckbox/CustomCheckbox";
 
 interface AddShareButtonProps {
     handleAddShareButton:(val:boolean)=>void

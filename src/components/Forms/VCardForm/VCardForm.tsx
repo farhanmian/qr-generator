@@ -4,7 +4,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import {
   IconDeviceMobileCog,
@@ -13,11 +13,11 @@ import {
   IconSettings,
   IconSpeakerphone,
 } from "@tabler/icons-react";
-import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-import ColorSelector from "@/components/partials/ColorSelector/ColorSelector";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
 import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
-import VCardInformationSection from "./VCardInformationSection";
-import WelcomeScreenLogo from "@/components/partials/WelcomeScreenLogo/WelcomeScreenLogo";
+import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
+import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
+import VCardInformationSection from "./VCardInformation/VCardInformationSection";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },

@@ -4,7 +4,7 @@ import { Avatar, Tooltip, Upload } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { IconInfoCircleFilled, IconX } from "@tabler/icons-react";
 
-export default function UpdateProfile({
+export default function VCardUpdateProfile({
   toolTipText,
 }: {
   toolTipText: string;
@@ -36,7 +36,7 @@ export default function UpdateProfile({
           </div>
         </Tooltip>
       </div>
-      <div className="ml-[42px] flex gap-x-[50px] items-center">
+      <div className="ml-[34px] flex gap-x-[50px] items-center">
         <div className="relative">
           <input
             ref={inputRef}
@@ -48,7 +48,7 @@ export default function UpdateProfile({
           />
           <div
             onClick={() => inputRef.current?.click()}
-            className="h-[88px] w-[88px] bg-[var(--primary)] cursor-pointer rounded-full flex items-center justify-center overflow-hidden border border-dashed transition-all border-white hover:border-slate-300 hover:text-slate-300 "
+            className="h-[92px] w-[92px] bg-[var(--primary)] cursor-pointer rounded-full flex items-center justify-center overflow-hidden border border-dashed transition-all border-white hover:border-slate-300 hover:text-slate-300 "
           >
             {profileUrl ? (
               <img

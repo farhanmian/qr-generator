@@ -4,13 +4,13 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-import ColorSelector from "@/components/partials/ColorSelector/ColorSelector";
-import WelcomeScreenLogo from "@/components/partials/WelcomeScreenLogo/WelcomeScreenLogo";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
+import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
 import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
 import { IconEdit, IconFidgetSpinner, IconListDetails, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
+import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
 
 const formFields = [
   {
@@ -88,7 +88,7 @@ const EventForm = () => {
 
 
   return (
-    <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
+    <div className="w-full flex flex-col gap-y-6 px-20 py-10">
       <FormTitleInput placeholder="Name Of Your Event" />
 
       <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector config={colorSelectorConfig} handleColorSelect={handleColorSelect} />} prependIcon={<IconEdit />} defaultOpen />
@@ -107,15 +107,15 @@ const EventForm = () => {
         defaultOpen
       />
       
-     <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
-
-
       <CustomCollapse
         label="Welcome Screen"
         content={<WelcomeScreenLogo />}
         prependIcon={<IconFidgetSpinner />}
         defaultOpen
       />
+
+     <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
+
     </div>
   );
 };
