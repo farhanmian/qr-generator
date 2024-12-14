@@ -46,7 +46,7 @@ const list = [
     title: "Social Media",
     text: "Link to your social media channels",
     icon: <IconSpeakerphone />,
-    link: "socialmedia",
+    link: "social-media",
   },
   {
     title: "Images",
