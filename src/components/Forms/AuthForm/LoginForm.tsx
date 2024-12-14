@@ -1,15 +1,14 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { AuthFormData } from "../../../../store/types";
+import { useRouter, useSearchParams } from "next/navigation";
 import AuthWrapper from "./AuthWrapper";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "@/api/auth";
-import { useRouter } from "next/navigation";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import { AuthFormData } from "@/store/types";
 
-const SignupForm = () => {
-  const { signUp } = useAuthStore();
+const LoginForm = () => {
+  const { login } = useAuthStore();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,7 +17,7 @@ const SignupForm = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (authType === "signup") {
+    if (authType === "login") {
       setIsOpen(true);
     } else {
       setIsOpen(false);
@@ -28,24 +27,21 @@ const SignupForm = () => {
   const formSubmitHandler = async (form: AuthFormData) => {
     try {
       setIsLoading(true);
-      await signUp(form);
-      toast("Account created successfully", { theme: "dark" });
-      router.push("/?auth=login");
+      await login(form);
+      toast("Logged in successfully", { theme: "dark" });
+      router.push("/");
     } finally {
       setIsLoading(false);
     }
   };
-
   return (
-    <>
-      <AuthWrapper
-        formName="signup"
-        onFormSubmit={formSubmitHandler}
-        isOpen={isOpen}
-        isLoading={isLoading}
-      />
-    </>
+    <AuthWrapper
+      formName="login"
+      onFormSubmit={formSubmitHandler}
+      isOpen={isOpen}
+      isLoading={isLoading}
+    />
   );
 };
 
-export default SignupForm;
+export default LoginForm;

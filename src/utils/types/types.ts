@@ -31,3 +31,11 @@ export interface CreateVcard {
 export interface UpdateVcard extends CreateVcard {
   id: string; // Required field (non-empty string)
 }
+
+export interface FormFieldType  {
+  name: string;
+  placeholder: string;
+  col?: string;
+  textArea?: boolean;
+  rows?: number;
+};

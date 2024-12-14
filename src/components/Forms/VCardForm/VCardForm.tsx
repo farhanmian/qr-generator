@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
-import BasicInput from "../../Inputs/BasicInput/BasicInput";
-import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
+import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import ColorSelector from "../../ColorSelector/ColorSelector";
-import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
-import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import IconEdit from "@/components/icons/IconEdit";
-import { IconFileText, IconListDetails } from "@tabler/icons-react";
-import FormTitleInput from "../../Inputs/FormTitleInput";
-import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-import IconSettings from "@/components/icons/IconSettings";
+import {
+  IconDeviceMobileCog,
+  IconEdit,
+  IconListDetails,
+  IconSettings,
+  IconSpeakerphone,
+} from "@tabler/icons-react";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
+import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
+import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
+import VCardInformationSection from "./VCardInformation/VCardInformationSection";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -105,9 +107,7 @@ const VCardForm = () => {
 
       <CustomCollapse
         label="Information"
-        content={
-          <FormPrimary submitHandler={submitHandler} fields={formFields} />
-        }
+        content={<VCardInformationSection formFields={formFields} />}
         prependIcon={<IconListDetails />}
         defaultOpen
       />
@@ -115,9 +115,17 @@ const VCardForm = () => {
       <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
-        prependIcon={<IconSpeakerPhone />}
+        prependIcon={<IconSpeakerphone />}
         defaultOpen
       />
+
+      <CustomCollapse
+        label="Welcome Screen"
+        content={<WelcomeScreenLogo />}
+        prependIcon={<IconDeviceMobileCog />}
+        defaultOpen
+      />
+
       <CustomCollapse
         label="Advance Options"
         content={<AddShareButton handleAddShareButton={handleAddShareButton} />}

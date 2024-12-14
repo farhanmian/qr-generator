@@ -1,6 +1,6 @@
 "use client";
 
-import IconChevronDown from "@/components/icons/IconChevronDown";
+import { IconChevronDown } from "@tabler/icons-react";
 import { Collapse } from "antd";
 import React, { useState } from "react";
 
@@ -11,7 +11,7 @@ interface CollapseIconProps {
 const CollapseIcon: React.FC<CollapseIconProps> = ({ rotate }) => {
   return (
     <div className={`h-6 w-6 transition-all`} style={{ transform: `rotate(${rotate}deg)` }}>
-      {IconChevronDown()}
+      {<IconChevronDown size='100%' />}
     </div>
   );
 };
@@ -44,6 +44,7 @@ export default function CustomCollapse(props: CustomCollapseProps) {
 
   return (
     <Collapse
+    className="shadow-lg"
       size="large"
       defaultActiveKey={[props.defaultOpen ? "1" : "0"]}
       expandIcon={props.prependIcon ? expandIcon : undefined}

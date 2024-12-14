@@ -2,9 +2,9 @@
 
 import { socialMedia } from "@/utils/constant";
 import style from "./AddSocialMediaChannel.module.css";
-import { useState } from "react";
-import BasicInput from "@/components/app/Inputs/BasicInput/BasicInput";
-import IconX from "@/components/icons/IconX";
+import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
+import BasicInput from "../../Inputs/BasicInput/BasicInput";
+import { Icon, IconProps, IconX } from "@tabler/icons-react";
 
 interface Channel {
   id: string;
@@ -36,6 +36,8 @@ export default function AddSocialMediaLinks() {
           <h2 className="font-semibold">
             Click on the icon to add a social media channel.
           </h2>
+
+          {/* SELECTED SOCIAL MEDIA LINKS */}
           {Boolean(socialMediaLinks.length) && (
             <div className="flex flex-col gap-y-2 ">
               {socialMediaLinks.map((channel, i) => (
@@ -46,7 +48,7 @@ export default function AddSocialMediaLinks() {
                       } h-8 w-8 flex items-center justify-center rounded-md`}
                       style={{ backgroundColor: `${channel.bgColor}` }}
                     >
-                      <div className={`h-5 w-5`}>{channel.icon()}</div>
+                      <div className={`h-5 w-5`}><channel.icon  size='100%'/></div>
                     </div>
 
                     <div className="flex gap-x-3 w-full justify-items-center items-center">
@@ -61,7 +63,7 @@ export default function AddSocialMediaLinks() {
                         className="w-5 h-5 text-[#989898] hover:text-white"
                         onClick={() => handleRemoveChannel(channel.id)}
                       >
-                        <IconX />
+                        <IconX size='100%' />
                       </button>
                     </div>
                   </div>
@@ -71,7 +73,7 @@ export default function AddSocialMediaLinks() {
 
           <div className="mt-4 flex">
             <div className={`${style.descriptionContainer} `}>
-              <h5 className="text-nowrap ">Add More: </h5>
+              <h5 className="text-nowrap">Add More: </h5>
             </div>
 
             <div className="ml-8 max-w-[450px]">
@@ -85,7 +87,8 @@ export default function AddSocialMediaLinks() {
                     onClick={() => handleAddChannel(channel)}
                   >
                     <button className={`${style.channelButton}`}>
-                      {channel.icon()}{" "}
+                      <channel.icon size='100%' />
+              
                     </button>
                     <span className={`${style.channelName}`}>
                       {channel.name}
