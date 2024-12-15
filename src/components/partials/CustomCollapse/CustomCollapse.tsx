@@ -46,7 +46,6 @@ export default function CustomCollapse(props: CustomCollapseProps) {
   return (
     <Collapse
       size="large"
-      collapsible={false}
       defaultActiveKey={[props.defaultOpen ? "1" : "0"]}
       expandIcon={props.prependIcon ? expandIcon : undefined}
       activeKey={collapseActive ? "1" : undefined}
