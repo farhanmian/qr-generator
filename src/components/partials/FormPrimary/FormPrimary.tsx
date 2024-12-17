@@ -15,8 +15,10 @@ type FormFieldType = {
 const FormPrimary: React.FC<{
   className?: string;
   fields: FormFieldType;
-  submitHandler: (data: any) => void;
-}> = ({ className, fields, submitHandler }) => {
+  submitHandler?: (data: any) => void;
+  changeHandler?: (data: any) => void;
+  isSubmit?: boolean;
+}> = ({ changeHandler, className, fields, submitHandler, isSubmit = true }) => {
   const {
     watch,
     control,
@@ -24,10 +26,12 @@ const FormPrimary: React.FC<{
     formState: { errors },
   } = useForm();
 
+  console.log(watch(), "WATCHHHH");
   const classes = className;
   return (
     <form
-      onSubmit={handleSubmit(submitHandler)}
+      // onSubmit={handleSubmit( submitHandler)}
+      onChange={() => changeHandler && changeHandler(watch())}
       className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
         classes || ""
       }`}
@@ -53,7 +57,7 @@ const FormPrimary: React.FC<{
             )}
           />
         ))}
-      <ButtonPrimary>Submit</ButtonPrimary>
+      {isSubmit && <ButtonPrimary>Submit</ButtonPrimary>}
     </form>
   );
 };

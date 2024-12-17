@@ -20,16 +20,15 @@ const colorSelectorConfig = {
 
 const formFields = [
   {
-    name: "Headline:",
-    placeholder: "Connect with us on social media.",
+    name: "aboutUs",
+    placeholder: "Headline",
     col: "col-span-2",
     textArea: true,
     rows: 1,
   },
   {
-    name: "About us:",
-    placeholder:
-      "Follow us and get updates delivered to your favourite social media channel",
+    name: "aboutUs",
+    placeholder: "About us",
     col: "col-span-2",
     textArea: true,
     rows: 2,

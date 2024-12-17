@@ -24,7 +24,7 @@ const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
       type={rest.type ? rest.type : "button"}
       className={`${styles.button} ${
         classes || ""
-      } py-3 px-10 rounded-[40px] text-primary active:scale-[.97] transition-all duration-300 ease-out font-semibold text-xl relative ${
+      } py-3 px-10 rounded-[40px] text-primary active:scale-[.97] transition-all duration-300 ease-out font-semibold text-xl relative cursor-pointer ${
         theme === "primary"
           ? "bg-btn-primary"
           : `bg-btn-secondary text-slate-50 ${styles.btnSecondary}`

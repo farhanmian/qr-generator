@@ -4,9 +4,10 @@ import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 interface Props {
   title: string;
+  changeHandler: (data: any) => void;
 }
 
-const UploadFile: React.FC<Props> = ({ title }) => {
+const UploadFile: React.FC<Props> = ({ title, changeHandler }) => {
   const [selectedFile, setSelectedFile] = useState<any>();
 
   console.log(selectedFile?.name, selectedFile, "FILES_HERE");
@@ -21,7 +22,9 @@ const UploadFile: React.FC<Props> = ({ title }) => {
               ? selectedFile?.name
               : `Upload a PDF File upto 20MB.`}
           </p>
-          <ButtonPrimary> Upload PDF</ButtonPrimary>
+          <div className="cursor-pointer">
+            <ButtonPrimary> Upload PDF</ButtonPrimary>
+          </div>
         </div>
         {/* */}
         <input
@@ -30,6 +33,7 @@ const UploadFile: React.FC<Props> = ({ title }) => {
           onChange={(e) => {
             console.log(e.target.files?.item, "TESTING");
             setSelectedFile(e.target.files?.[0]);
+            changeHandler(e.target.files?.[0]);
           }}
         />
       </div>

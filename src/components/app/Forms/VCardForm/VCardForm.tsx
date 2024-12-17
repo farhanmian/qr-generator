@@ -16,13 +16,14 @@ import { IconFileText, IconListDetails } from "@tabler/icons-react";
 import FormTitleInput from "../../Inputs/FormTitleInput";
 import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
 import IconSettings from "@/components/icons/IconSettings";
+import { toast } from "react-toastify";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
   { name: "lastName", placeholder: "Last Name" },
   { name: "mobile", placeholder: "Mobile Number" },
-  { name: "phone", placeholder: "Phone" },
-  { name: "fax", placeholder: "Fax" },
+  { name: "contact", placeholder: "Contact" },
+  // { name: "fax", placeholder: "Fax" },
   { name: "email", placeholder: "Email" },
   { name: "company", placeholder: "Company" },
   { name: "yourJob", placeholder: "Your Job" },
@@ -57,17 +58,7 @@ const VCardForm = () => {
     formState: { errors },
   } = useForm(); // Ensure control is included
 
-  const submitHandler = async (data: any) => {
-    console.log(data, "DATAAAA"); // This should log the form data
-    const formData = new FormData();
-
-    for (let key in data) {
-      formData.append(key, data[key]);
-    }
-
-    const response = await createVcard(data);
-    console.log(response, "RESPONSEEEEE");
-  };
+  const [values, setValues] = useState();
 
   const colorSelectorConfig = {
     colors,
@@ -85,6 +76,27 @@ const VCardForm = () => {
 
   const handleAddShareButton = (val: boolean) => {
     console.log(val);
+  };
+
+  const changeHandler = (data: any) => {
+    console.log(data, "DATAAAA");
+    setValues(data);
+  };
+
+  const submitHandler = async (data: any) => {
+    console.log(data, "DATAAAA"); // This should log the form data
+    const formData = new FormData();
+
+    for (let key in data) {
+      formData.append(key, data[key]);
+    }
+
+    const response = await createVcard(formData);
+    console.log(response, "responsesss", response.status);
+    if (response.status == 201) {
+      console.log("INSIDEEEE", response);
+      toast.success("Success", { autoClose: false });
+    }
   };
 
   return (
@@ -106,7 +118,12 @@ const VCardForm = () => {
       <CustomCollapse
         label="Information"
         content={
-          <FormPrimary submitHandler={submitHandler} fields={formFields} />
+          <FormPrimary
+            isSubmit={false}
+            changeHandler={changeHandler}
+            // submitHandler={submitHandler}
+            fields={formFields}
+          />
         }
         prependIcon={<IconListDetails />}
         defaultOpen
@@ -123,6 +140,9 @@ const VCardForm = () => {
         content={<AddShareButton handleAddShareButton={handleAddShareButton} />}
         prependIcon={<IconSettings />}
       />
+      <ButtonPrimary onClick={() => submitHandler(values)}>
+        Submit
+      </ButtonPrimary>
     </div>
   );
 };
