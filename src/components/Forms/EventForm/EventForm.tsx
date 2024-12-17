@@ -11,6 +11,7 @@ import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeS
 import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
 import { IconEdit, IconFidgetSpinner, IconListDetails, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
 import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
+import EventFormInformation from "./EventFormInformation/EventFormInformation";
 
 const formFields = [
   {
@@ -26,13 +27,13 @@ const formFields = [
     rows: 4,
     col: "col-span-2",
   },
-  { name: "eventDate", placeholder: "Event Date" },
-  { name: "eventTime", placeholder: "Event Time" },
-  { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
-  { name: "contact", placeholder: "Contact person for the event" },
-  { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
-  { name: "email", placeholder: "Email eg: your@email.com" },
-  { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
+  // { name: "eventDate", placeholder: "Event Date" },
+  // { name: "eventTime", placeholder: "Event Time" },
+  // { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
+  // { name: "contact", placeholder: "Contact person for the event" },
+  // { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
+  // { name: "email", placeholder: "Email eg: your@email.com" },
+  // { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
 ];
 
 const colors = [
@@ -94,8 +95,8 @@ const EventForm = () => {
       <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector config={colorSelectorConfig} handleColorSelect={handleColorSelect} />} prependIcon={<IconEdit />} defaultOpen />
 
       <CustomCollapse
-        label="Information"
-        content={<FormPrimary fields={formFields} submitHandler={()=>{}} />}
+        label="Basic Information"
+        content={<EventFormInformation details='Include all necessary information about ypur event below.' formFields={formFields} />}
         prependIcon={<IconListDetails size={24}   />}
         defaultOpen
       />
