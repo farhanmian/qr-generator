@@ -4,6 +4,8 @@ import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse"
 import IconUploadFile from "@/components/icons/IconUploadFile";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import IconEdit from "@/components/icons/IconEdit";
+import { toast } from "react-toastify";
+import { createWebsite } from "@/api/website/websiteApis";
 
 const formFields = [
   //   { name: "company", placeholder: "Company" },
@@ -25,8 +27,18 @@ const formFields = [
 ];
 
 const WebsiteForm = () => {
-  const submitHandler = (data: any) => {
-    console.log(data, "DATA_HERE");
+  const submitHandler = async (data: any) => {
+    const formData = new FormData();
+
+    for (let key in data) {
+      formData.append(key, data[key]);
+    }
+
+    const response = await createWebsite(formData);
+    if (response.status == 201) {
+      console.log("INSIDEEEE", response);
+      toast.success("Success", { autoClose: false });
+    }
   };
 
   return (
