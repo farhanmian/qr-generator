@@ -1,24 +1,14 @@
 import React, { use } from "react";
 import styles from "./FormPrimary.module.css";
-import BasicInput from "@/components/app/Inputs/BasicInput/BasicInput";
+import { FormFieldType } from "@/utils/types/types";
 import { Controller, useForm } from "react-hook-form";
-import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-
-type FormFieldType = {
-  name: string;
-  placeholder: string;
-  col?: string;
-  textArea?: boolean;
-  rows?: number;
-}[];
+import BasicInput from "../Inputs/BasicInput/BasicInput";
 
 const FormPrimary: React.FC<{
   className?: string;
-  fields: FormFieldType;
-  submitHandler?: (data: any) => void;
-  changeHandler?: (data: any) => void;
-  isSubmit?: boolean;
-}> = ({ changeHandler, className, fields, submitHandler, isSubmit = true }) => {
+  fields: FormFieldType[];
+  submitHandler: (data: any) => void;
+}> = ({ className, fields, submitHandler }) => {
   const {
     watch,
     control,
@@ -30,9 +20,8 @@ const FormPrimary: React.FC<{
   const classes = className;
   return (
     <form
-      // onSubmit={handleSubmit( submitHandler)}
-      onChange={() => changeHandler && changeHandler(watch())}
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg p-8 rounded-xl shadow-xl ${
+      onSubmit={handleSubmit(submitHandler)}
+      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg  rounded-xl  ${
         classes || ""
       }`}
     >
@@ -57,7 +46,7 @@ const FormPrimary: React.FC<{
             )}
           />
         ))}
-      {isSubmit && <ButtonPrimary>Submit</ButtonPrimary>}
+      {/* {isSubmit && <ButtonPrimary>Submit</ButtonPrimary>} */}
     </form>
   );
 };
