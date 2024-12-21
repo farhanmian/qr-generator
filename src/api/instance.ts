@@ -13,7 +13,7 @@ const instance = axios.create({
 // Create an Axios instance for authenticated API requests
 const authInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
-  timeout: 1000,
+  // timeout: 1000,
   withCredentials: true,
 });
 

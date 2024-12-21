@@ -6,7 +6,7 @@ interface getService {
 }
 
 export const createWebsite = async (body: any) => {
-  const res = await formDataInstance.post("/website", body);
+  const res = await authInstance.post("/website", body);
   console.log(res, "RESPONSEEEE_SAP");
   return res;
 };
