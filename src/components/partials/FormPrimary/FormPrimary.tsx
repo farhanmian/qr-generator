@@ -1,8 +1,9 @@
 import React, { use } from "react";
 import styles from "./FormPrimary.module.css";
-import BasicInput from "@/components/app/Inputs/BasicInput/BasicInput";
+// import { FormFieldType } from "@/utils/types/types";
 import { Controller, useForm } from "react-hook-form";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
+import BasicInput from "../Inputs/BasicInput/BasicInput";
 
 type FormFieldType = {
   name: string;

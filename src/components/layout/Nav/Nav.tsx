@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LoginForm from "@/components/app/Forms/Auth/LoginForm";
-import SignupForm from "@/components/app/Forms/Auth/SignupForm";
+// import LoginForm from "@/components/app/Forms/Auth/LoginForm";
+// import SignupForm from "@/components/app/Forms/Auth/SignupForm";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import LoginForm from "@/components/Forms/AuthForm/LoginForm";
+import SignupForm from "@/components/Forms/AuthForm/SignupForm";
 
 interface Props {
   token?: string;
