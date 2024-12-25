@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SiteProgressBar from "@/components/partials/SiteProgressBar";
 import Nav from "@/components/layout/Nav/Nav";
-
+import getToken from "@/utils/helpers/getToken";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,10 +18,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const token = getToken();
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
+        <Nav token={token} />
         {children}
         <ToastContainer />
         <SiteProgressBar />
