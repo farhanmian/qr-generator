@@ -1,16 +1,26 @@
 "use client";
-import React from "react";
-import FormTitleInput from "../../Inputs/FormTitleInput";
-import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import ColorSelector from "../../ColorSelector/ColorSelector";
 import { colors } from "@/components/constants/Colors";
-import IconEdit from "@/components/icons/IconEdit";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
+import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
+import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import React from "react";
 import TemplateSelection from "../../TemplateSelection/TemplateSelection";
+import { IconEdit, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
-import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-import IconSettings from "@/components/icons/IconSettings";
-import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
+import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
+// import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
+// import FormTitleInput from "../../Inputs/FormTitleInput";
+// import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
+// import ColorSelector from "../../ColorSelector/ColorSelector";
+// import { colors } from "@/components/constants/Colors";
+// import IconEdit from "@/components/icons/IconEdit";
+// import TemplateSelection from "../../TemplateSelection/TemplateSelection";
+// import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
+// import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
+// import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
+// import IconSettings from "@/components/icons/IconSettings";
+// import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
 
 const colorSelectorConfig = {
   colors,
@@ -79,13 +89,13 @@ const SocialMediaForm = () => {
         prependIcon={<IconEdit />}
         defaultOpen
       />
-
+      {/* 
       <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
-        prependIcon={<IconSpeakerPhone />}
+        prependIcon={<IconSpeakerphone />}
         defaultOpen
-      />
+      /> */}
       <CustomCollapse
         label="Advance Options"
         content={<AddShareButton handleAddShareButton={handleAddShareButton} />}

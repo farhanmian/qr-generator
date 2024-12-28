@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import FormTitleInput from "../../Inputs/FormTitleInput";
+// import FormTitleInput from "../../Inputs/FormTitleInput";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import ColorSelector from "../../ColorSelector/ColorSelector";
-import IconEdit from "@/components/icons/IconEdit";
+// import ColorSelector from "../../ColorSelector/ColorSelector";
+// import IconEdit from "@/components/icons/IconEdit";
 import IconUploadFile from "@/components/icons/IconUploadFile";
 import UploadFile from "@/components/partials/UploadFile/UploadFile";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
@@ -11,6 +11,9 @@ import { colors } from "@/components/constants/Colors";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { toast } from "react-toastify";
 import { createPdf } from "@/api/pdf/pdfApis";
+import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
+import { IconEdit } from "@tabler/icons-react";
 
 const formFields = [
   { name: "company", placeholder: "Company" },

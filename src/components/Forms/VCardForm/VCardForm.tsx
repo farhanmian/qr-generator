@@ -20,6 +20,7 @@ import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareBut
 import VCardInformationSection from "./VCardInformation/VCardInformationSection";
 import { toast } from "react-toastify";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
+import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -132,12 +133,12 @@ const VCardForm = () => {
         defaultOpen
       />
 
-      <CustomCollapse
+      {/* <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
         prependIcon={<IconSpeakerphone />}
         defaultOpen
-      />
+      /> */}
 
       <CustomCollapse
         label="Welcome Screen"

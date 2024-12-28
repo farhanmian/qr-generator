@@ -1,13 +1,15 @@
 "use client";
-import FormTitleInput from "../../Inputs/FormTitleInput";
+// import FormTitleInput from "../../Inputs/FormTitleInput";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import IconUploadFile from "@/components/icons/IconUploadFile";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import IconEdit from "@/components/icons/IconEdit";
+// import IconEdit from "@/components/icons/IconEdit";
 import { toast } from "react-toastify";
 import { createWebsite } from "@/api/website/websiteApis";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { useState } from "react";
+import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import { IconEdit } from "@tabler/icons-react";
 
 const formFields = [
   {
