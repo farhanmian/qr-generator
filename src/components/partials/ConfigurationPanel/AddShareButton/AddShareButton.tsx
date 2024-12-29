@@ -15,7 +15,7 @@ export default function AddShareButton({handleAddShareButton}:AddShareButtonProp
       <div className="flex">
         <h5 className="text-nowrap font-bold">Sharing:</h5>
         <div className="ml-12">
-          <CustomCheckbox inputChange={handleCheckboxChange} />
+          <CustomCheckbox inputChange={handleCheckboxChange} label="Add a share button to the page"/>
         </div>
       </div>
     </div>

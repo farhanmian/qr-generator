@@ -31,18 +31,18 @@ const BasicInput: React.FC<Props> = ({
         <textarea
           {...rest}
           rows={rows ? rows : 4}
-          className={`w-full px-4 py-3  border border-gray-700 rounded-lg focus:outline-none bg-[#2D2C36]
-                  focus:border-secondary text-white placeholder-gray-400
-                  transition-colors duration-200 ${classes || ""} ${
+          className={`w-full px-4 py-3  transition-all  border border-gray-700 rounded-lg focus:outline-none bg-[#2D2C36]
+                  focus:shadow-[0px_0px_4px_2px_#c0b7e81d] focus:border-secondary hover:border-secondary text-white placeholder-gray-400
+                  transition-colors transition-[box-shadow] duration-200 ${classes || ""} ${
             prepend && "rounded-l-[0px] "
           }`}
         />
       ) : (
         <input
           {...rest}
-          className={`w-full px-4 py-3  border border-gray-700 rounded-lg focus:outline-none bg-[#2D2C36]
-                  focus:border-secondary text-white placeholder-gray-400
-                  transition-colors duration-200 ${classes || ""} ${
+          className={`w-full px-4 py-3 transition-all  border border-gray-700 rounded-lg focus:outline-none bg-[#2D2C36]
+                  focus:shadow-[0px_0px_4px_2px_#c0b7e81d] focus:border-secondary hover:border-secondary text-white placeholder-gray-400
+                   transition-colors transition-[box-shadow] duration-200 ${classes || ""} ${
             prepend && "rounded-l-[0px] "
           }`}
         />
