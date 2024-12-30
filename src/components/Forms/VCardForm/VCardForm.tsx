@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-// import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
-// import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
+
 import {
   IconDeviceMobileCog,
   IconEdit,
@@ -21,6 +20,8 @@ import VCardInformationSection from "./VCardInformation/VCardInformationSection"
 import { toast } from "react-toastify";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
+// import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -133,12 +134,12 @@ const VCardForm = () => {
         defaultOpen
       />
 
-      {/* <CustomCollapse
+      <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
         prependIcon={<IconSpeakerphone />}
         defaultOpen
-      /> */}
+      />
 
       <CustomCollapse
         label="Welcome Screen"

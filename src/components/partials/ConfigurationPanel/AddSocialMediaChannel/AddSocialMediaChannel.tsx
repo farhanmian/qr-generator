@@ -16,7 +16,7 @@ interface Channel {
   bgColor: string;
 }
 
-export const AddSocialMediaChannel = () => {
+const AddSocialMediaChannel = () => {
   const [socialMediaLinks, setSocialMediaLinks] = useState<Channel[] | []>([]);
 
   const handleAddChannel = (channelToAdd: Channel) => {
