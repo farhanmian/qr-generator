@@ -6,28 +6,32 @@ import { IconInfoCircleFilled } from "@tabler/icons-react";
 
 interface ColorSelectorProps {
   config: {
-    type: 'custom' | 'button' | 'line';
+    type: "custom" | "button" | "line";
     colors: { id: string; primary: string; secondary?: string }[];
     header: string;
   };
-  handleColorSelect:(color:{
+  extendedComponent?: React.ReactNode;
+  handleColorSelect: (color: {
     id: string;
     primary: string;
     secondary?: string;
-})=>void
-
+  }) => void;
 }
 
-const ColorSelector = ({ config: { type, colors, header ,  }, handleColorSelect }: ColorSelectorProps) => {
+const ColorSelector = ({
+  config: { type, colors, header },
+  handleColorSelect,
+  extendedComponent = null,
+}: ColorSelectorProps) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const colorHandler = (val: string, label: string) => {
     console.log(val, "VALUEEEE", label);
   };
 
-  useEffect(()=>{
-    handleColorSelect(selectedColor)
-  },[selectedColor])
+  useEffect(() => {
+    handleColorSelect(selectedColor);
+  }, [selectedColor]);
 
   return (
     <div className="primaryFormBg rounded-xl p-10 w-full text-white flex flex-col gap-y-5">
@@ -103,6 +107,8 @@ const ColorSelector = ({ config: { type, colors, header ,  }, handleColorSelect 
           </div>
         </div>
       </div>
+      {extendedComponent && extendedComponent}
+      {/* sassss */}
     </div>
   );
 };

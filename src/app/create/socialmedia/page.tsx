@@ -1,11 +1,13 @@
-import VCardForm from "@/components/app/Forms/VCardForm/VCardForm";
+import SocialMediaForm from "@/components/app/Forms/SocialMediaForm/SocialMediaForm";
 import React from "react";
 
-export default function page() {
+const SocialMediaPage = () => {
   return (
     <div className="innerContainer flex flex-1 justify-between gap-x-6 pt-20">
-      <VCardForm />
+      <SocialMediaForm />
       <div className="max-w-lg w-full primaryFormBg " />
     </div>
   );
-}
+};
+
+export default SocialMediaPage;

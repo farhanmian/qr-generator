@@ -5,7 +5,7 @@ import { Divider } from "antd";
 import AddButton from "@/components/partials/AddButton";
 import EventFormVenueDetails from "./EventFormVenueDetails";
 
-export default function EventFormInformation({
+export default function EventFormPrimary({
   formFields,
   details
 }: {

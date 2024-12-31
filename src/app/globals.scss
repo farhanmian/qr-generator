@@ -10,6 +10,7 @@
   --primaryDark2: #1b1927;
   --primaryFormBg: #16151f;
   --secondary: #c0b7e8;
+  --light-color: #1c96c5;
 }
 /*dummy push */
 
@@ -118,24 +119,24 @@ h1 {
   color: #fff !important;
 }
 
-.custom-checkbox{
-  transition: all .2s;
+.custom-checkbox {
+  transition: all 0.2s;
 }
 
 .custom-checkbox-container:has(.custom-checkbox-label:hover) .custom-checkbox {
   border-color: var(--secondary);
 }
 
-.custom-checkbox-checked{
+.custom-checkbox-checked {
   background-color: #12a648;
   border-color: #12a648;
 }
 
-.custom-checkbox-checked:hover{
+.custom-checkbox-checked:hover {
   border-color: #12a648 !important;
 }
 
-.ant-avatar-string{
+.ant-avatar-string {
   text-wrap: auto;
   font-weight: 500;
 }

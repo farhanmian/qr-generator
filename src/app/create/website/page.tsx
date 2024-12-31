@@ -1,11 +1,13 @@
-import VCardForm from "@/components/app/Forms/VCardForm/VCardForm";
+import WebsiteForm from "@/components/app/Forms/WebsiteForm/WebsiteForm";
 import React from "react";
 
-export default function page() {
+const websitePage = () => {
   return (
     <div className="innerContainer flex flex-1 justify-between gap-x-6 pt-20">
-      <VCardForm />
+      <WebsiteForm />
       <div className="max-w-lg w-full primaryFormBg " />
     </div>
   );
-}
+};
+
+export default websitePage;

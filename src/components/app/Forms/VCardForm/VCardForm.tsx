@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { createVcard } from "@/api/vcard/vcardApis";
-import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
 import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import {
@@ -18,6 +17,9 @@ import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
 import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
 import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
 import VCardInformationSection from "./VCardInformation/VCardInformationSection";
+import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
+import { toast } from "react-toastify";
+import { colors } from "@/constants/Colors";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },
@@ -39,19 +41,6 @@ const formFields = [
   },
 ];
 
-const colors = [
-  { id: "1", primary: "#455a63", secondary: "#e91e63" }, // Gray
-  { id: "2", primary: "#0289d1", secondary: "#64b5f6" }, // Blue
-  { id: "3", primary: "#d42f2f", secondary: "#ef9a9a" }, // Red
-  { id: "4", primary: "#4cb04f", secondary: "#81c784" }, // Green
-  { id: "5", primary: "#785548", secondary: "#ff8a65" }, // Brown
-  { id: "6", primary: "#41a38b", secondary: "#e9b764" }, // Pink
-  { id: "7", primary: "#f564ad", secondary: "#36c17d" }, // Orange
-  { id: "8", primary: "#ff8a66", secondary: "#4b5d71" }, // Violet
-  { id: "9", primary: "#7a1fa1", secondary: "#1de9b6" }, // Purple
-  { id: "10", primary: "#3f51b5", secondary: "#ff4081" }, // Light Green
-];
-
 const VCardForm = () => {
   const {
     handleSubmit,
@@ -59,17 +48,7 @@ const VCardForm = () => {
     formState: { errors },
   } = useForm(); // Ensure control is included
 
-  const submitHandler = async (data: any) => {
-    console.log(data, "DATAAAA"); // This should log the form data
-    const formData = new FormData();
-
-    for (let key in data) {
-      formData.append(key, data[key]);
-    }
-
-    const response = await createVcard(data);
-    console.log(response, "RESPONSEEEEE");
-  };
+  const [values, setValues] = useState();
 
   const colorSelectorConfig = {
     colors,
@@ -87,6 +66,27 @@ const VCardForm = () => {
 
   const handleAddShareButton = (val: boolean) => {
     console.log(val);
+  };
+
+  const changeHandler = (data: any) => {
+    console.log(data, "DATAAAA");
+    setValues(data);
+  };
+
+  const submitHandler = async (data: any) => {
+    console.log(data, "DATAAAA"); // This should log the form data
+    const formData = new FormData();
+
+    for (let key in data) {
+      formData.append(key, data[key]);
+    }
+
+    const response = await createVcard(formData);
+    console.log(response, "responsesss", response.status);
+    if (response.status == 201) {
+      console.log("INSIDEEEE", response);
+      toast.success("Success", { autoClose: false });
+    }
   };
 
   return (
@@ -131,6 +131,10 @@ const VCardForm = () => {
         content={<AddShareButton handleAddShareButton={handleAddShareButton} />}
         prependIcon={<IconSettings />}
       />
+
+      <ButtonPrimary onClick={() => submitHandler(values)}>
+        Submit
+      </ButtonPrimary>
     </div>
   );
 };

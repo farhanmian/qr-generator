@@ -1,5 +1,5 @@
+import EventForm from "@/components/app/Forms/EventForm/EventForm";
 import React from "react";
-import EventForm from "@/components/Forms/EventForm/EventForm";
 
 export default function page() {
   return (

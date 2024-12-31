@@ -1,11 +1,13 @@
-import VCardForm from "@/components/app/Forms/VCardForm/VCardForm";
+import PdfForm from "@/components/app/Forms/PdfForm/PdfForm";
 import React from "react";
 
-export default function page() {
+const PdfPage = () => {
   return (
     <div className="innerContainer flex flex-1 justify-between gap-x-6 pt-20">
-      <VCardForm />
+      <PdfForm />
       <div className="max-w-lg w-full primaryFormBg " />
     </div>
   );
-}
+};
+
+export default PdfPage;

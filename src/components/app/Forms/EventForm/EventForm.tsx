@@ -11,7 +11,7 @@ import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeS
 import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
 import { IconEdit, IconFidgetSpinner, IconListDetails, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
 import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
-import EventFormInformation from "./EventFormInformation/EventFormInformation";
+import EventFormPrimary from "./EventFormPrimary/EventFormPrimary";
 
 const formFields = [
   {
@@ -96,7 +96,7 @@ const EventForm = () => {
 
       <CustomCollapse
         label="Basic Information"
-        content={<EventFormInformation details='Include all necessary information about ypur event below.' formFields={formFields} />}
+        content={<EventFormPrimary details='Include all necessary information about ypur event below.' formFields={formFields} />}
         prependIcon={<IconListDetails size={24}   />}
         defaultOpen
       />
