@@ -21,7 +21,6 @@ import { toast } from "react-toastify";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
 import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
-// import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 
 const formFields = [
   { name: "firstName", placeholder: "First Name" },

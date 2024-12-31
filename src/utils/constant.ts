@@ -1,4 +1,12 @@
-import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandLinkedin, IconBrandSnapchatFilled, IconBrandTiktokFilled, IconBrandXFilled, IconWorld } from "@tabler/icons-react";
+import {
+  IconBrandFacebookFilled,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandSnapchat,
+  IconBrandTiktokFilled,
+  IconBrandXFilled,
+  IconWorld,
+} from "@tabler/icons-react";
 
 export const socialMedia = [
   {
@@ -7,7 +15,7 @@ export const socialMedia = [
     icon: IconWorld,
     placeholder: "www.website.com",
     type: "URL",
-    bgColor:'#616568'
+    bgColor: "#616568",
   },
   {
     id: "2",
@@ -15,7 +23,7 @@ export const socialMedia = [
     icon: IconBrandFacebookFilled,
     placeholder: "www.facebook.com",
     type: "URL",
-    bgColor:'#3b5998'
+    bgColor: "#3b5998",
   },
   {
     id: "3",
@@ -23,7 +31,7 @@ export const socialMedia = [
     icon: IconBrandXFilled,
     placeholder: "www.x.com",
     type: "URL",
-    bgColor:'#000'
+    bgColor: "#000",
   },
   {
     id: "4",
@@ -31,7 +39,7 @@ export const socialMedia = [
     icon: IconBrandInstagram,
     placeholder: "www.instagram.com",
     type: "URL",
-    bgColor:'#e1306c'
+    bgColor: "#e1306c",
   },
   {
     id: "5",
@@ -39,16 +47,15 @@ export const socialMedia = [
     icon: IconBrandLinkedin,
     placeholder: "www.linkedin.com",
     type: "URL",
-    bgColor:'#0077b5'
+    bgColor: "#0077b5",
   },
   {
     id: "6",
     name: "Snapchat",
-    icon: IconBrandSnapchatFilled,
+    icon: IconBrandSnapchat,
     placeholder: "www.snapchat.com",
     type: "URL",
-    bgColor:'#fffc00'
-
+    bgColor: "#fffc00",
   },
   {
     id: "7",
@@ -56,8 +63,7 @@ export const socialMedia = [
     icon: IconBrandTiktokFilled,
     placeholder: "www.tiktok.com",
     type: "URL",
-    bgColor:'#000'
-    
+    bgColor: "#000",
   },
   {
     id: "8",
@@ -65,7 +71,7 @@ export const socialMedia = [
     icon: IconWorld,
     placeholder: "www.website.com",
     type: "URL",
-    bgColor:'#616568'
+    bgColor: "#616568",
   },
   {
     id: "9",
@@ -73,7 +79,7 @@ export const socialMedia = [
     icon: IconBrandFacebookFilled,
     placeholder: "www.facebook.com",
     type: "URL",
-    bgColor:'#3b5998'
+    bgColor: "#3b5998",
   },
   {
     id: "10",
@@ -81,7 +87,7 @@ export const socialMedia = [
     icon: IconBrandXFilled,
     placeholder: "www.x.com",
     type: "URL",
-    bgColor:'#000'
+    bgColor: "#000",
   },
   {
     id: "11",
@@ -89,7 +95,7 @@ export const socialMedia = [
     icon: IconBrandInstagram,
     placeholder: "www.instagram.com",
     type: "URL",
-    bgColor:'#e1306c'
+    bgColor: "#e1306c",
   },
   {
     id: "12",
@@ -97,16 +103,15 @@ export const socialMedia = [
     icon: IconBrandLinkedin,
     placeholder: "www.linkedin.com",
     type: "URL",
-    bgColor:'#0077b5'
+    bgColor: "#0077b5",
   },
   {
     id: "13",
     name: "Snapchat",
-    icon: IconBrandSnapchatFilled,
+    icon: IconBrandSnapchat,
     placeholder: "www.snapchat.com",
     type: "URL",
-    bgColor:'#fffc00'
-
+    bgColor: "#fffc00",
   },
   {
     id: "14",
@@ -114,8 +119,7 @@ export const socialMedia = [
     icon: IconBrandTiktokFilled,
     placeholder: "www.tiktok.com",
     type: "URL",
-    bgColor:'#000'
-    
+    bgColor: "#000",
   },
   {
     id: "15",
@@ -123,7 +127,7 @@ export const socialMedia = [
     icon: IconWorld,
     placeholder: "www.website.com",
     type: "URL",
-    bgColor:'#616568'
+    bgColor: "#616568",
   },
   {
     id: "16",
@@ -131,7 +135,7 @@ export const socialMedia = [
     icon: IconBrandFacebookFilled,
     placeholder: "www.facebook.com",
     type: "URL",
-    bgColor:'#3b5998'
+    bgColor: "#3b5998",
   },
   {
     id: "17",
@@ -139,7 +143,7 @@ export const socialMedia = [
     icon: IconBrandXFilled,
     placeholder: "www.x.com",
     type: "URL",
-    bgColor:'#000'
+    bgColor: "#000",
   },
   {
     id: "18",
@@ -147,7 +151,7 @@ export const socialMedia = [
     icon: IconBrandInstagram,
     placeholder: "www.instagram.com",
     type: "URL",
-    bgColor:'#e1306c'
+    bgColor: "#e1306c",
   },
   {
     id: "19",
@@ -155,7 +159,6 @@ export const socialMedia = [
     icon: IconBrandLinkedin,
     placeholder: "www.linkedin.com",
     type: "URL",
-    bgColor:'#0077b5'
+    bgColor: "#0077b5",
   },
- 
 ];
