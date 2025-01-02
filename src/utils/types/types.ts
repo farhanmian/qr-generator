@@ -31,3 +31,12 @@ export interface CreateVcard {
 export interface UpdateVcard extends CreateVcard {
   id: string; // Required field (non-empty string)
 }
+
+export type VCardDataType = {
+  profileImage: string;
+  name: string;
+  description: string;
+  phone: string;
+  email: string;
+  linkedin: string;
+};
