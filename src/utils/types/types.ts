@@ -40,3 +40,10 @@ export type VCardDataType = {
   email: string;
   linkedin: string;
 };
+export interface FormFieldType {
+  name: string;
+  placeholder: string;
+  col?: string;
+  textArea?: boolean;
+  rows?: number;
+}

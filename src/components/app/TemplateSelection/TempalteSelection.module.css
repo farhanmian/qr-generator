@@ -1,0 +1,8 @@
+.imageContainer {
+  border: 2px solid white;
+}
+
+.imageContainer:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}

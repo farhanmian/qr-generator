@@ -1,24 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import BasicInput from "../../Inputs/BasicInput/BasicInput";
-import BasicTextArea from "../../Inputs/BasicInput/BasicTextArea";
+import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import ButtonPrimary from "@/components/partials/ButtonPrimary/ButtonPrimary";
 import { createVcard } from "@/api/vcard/vcardApis";
 import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-import ColorSelector from "../../ColorSelector/ColorSelector";
-import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
-import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
+import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-import IconEdit from "@/components/icons/IconEdit";
-import {
-  IconFidgetSpinner,
-  IconFileText,
-  IconListDetails,
-} from "@tabler/icons-react";
-import FormTitleInput from "../../Inputs/FormTitleInput";
-import WelcomeScreenLogo from "@/components/partials/WelcomeScreenLogo/WelcomeScreenLogo";
+import ColorSelector from "@/components/partials/ConfigurationPanel/ColorSelector/ColorSelector";
+import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
+import FormTitleInput from "@/components/partials/Inputs/FormTitleInput";
+import { IconEdit, IconFidgetSpinner, IconListDetails, IconSettings, IconSpeakerphone } from "@tabler/icons-react";
+import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareButton/AddShareButton";
+import EventFormPrimary from "./EventFormPrimary/EventFormPrimary";
 
 const formFields = [
   {
@@ -34,13 +27,13 @@ const formFields = [
     rows: 4,
     col: "col-span-2",
   },
-  { name: "eventDate", placeholder: "Event Date" },
-  { name: "eventTime", placeholder: "Event Time" },
-  { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
-  { name: "contact", placeholder: "Contact person for the event" },
-  { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
-  { name: "email", placeholder: "Email eg: your@email.com" },
-  { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
+  // { name: "eventDate", placeholder: "Event Date" },
+  // { name: "eventTime", placeholder: "Event Time" },
+  // { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
+  // { name: "contact", placeholder: "Contact person for the event" },
+  // { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
+  // { name: "email", placeholder: "Email eg: your@email.com" },
+  // { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
 ];
 
 const colors = [
@@ -90,34 +83,40 @@ const EventForm = () => {
     console.log(color,"TEST")
   }
 
+  const handleAddShareButton = (val:boolean) =>{
+    console.log(val)
+  }
+
 
   return (
-    <div className="w-full flex flex-col gap-y-6 px-20 py-10 bg-[var(--primaryDark)]">
+    <div className="w-full flex flex-col gap-y-6 px-20 py-10">
       <FormTitleInput placeholder="Name Of Your Event" />
 
       <CustomCollapse label="Design & Customize your vCard" content={<ColorSelector config={colorSelectorConfig} handleColorSelect={handleColorSelect} />} prependIcon={<IconEdit />} defaultOpen />
 
-
       <CustomCollapse
-        label="Information"
-        content={<FormPrimary fields={formFields} />}
-        prependIcon={<IconListDetails />}
+        label="Basic Information"
+        content={<EventFormPrimary details='Include all necessary information about ypur event below.' formFields={formFields} />}
+        prependIcon={<IconListDetails size={24}   />}
         defaultOpen
       />
 
       <CustomCollapse
         label="Social Media"
         content={<AddSocialMediaChannel />}
-        prependIcon={<IconSpeakerPhone />}
+        prependIcon={<IconSpeakerphone />}
         defaultOpen
       />
-
+      
       <CustomCollapse
         label="Welcome Screen"
         content={<WelcomeScreenLogo />}
         prependIcon={<IconFidgetSpinner />}
         defaultOpen
       />
+
+     <CustomCollapse label="Advance Options" content={<AddShareButton handleAddShareButton={handleAddShareButton} />} prependIcon={<IconSettings />}  />
+
     </div>
   );
 };

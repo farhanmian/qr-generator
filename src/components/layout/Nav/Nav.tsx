@@ -3,12 +3,26 @@ import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LoginForm from "@/components/app/Forms/Auth/LoginForm";
-import SignupForm from "@/components/app/Forms/Auth/SignupForm";
-import { usePathname } from "next/navigation";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import LoginForm from "@/components/app/Forms/AuthForm/LoginForm";
+import SignupForm from "@/components/app/Forms/AuthForm/SignupForm";
 
-const Nav = () => {
-  const pathname = usePathname();
+interface Props {
+  token?: string;
+}
+
+const Nav: React.FC<Props> = ({ token }) => {
+  console.log(token, "tokenSap");
+  const router = useRouter();
+
+  const logoutHandler = async () => {
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/logout`);
+    console.log(res, "RESSS");
+    if (res.data?.success) {
+      // router.refresh();
+    }
+  };
 
   return (
     <>
@@ -29,6 +43,7 @@ const Nav = () => {
               </div>
             </Link>
 
+          {!token?.length ? (
             <div
               className={`flex gap-x-10 items-center ${styles.linkContainer}`}
             >
@@ -39,9 +54,17 @@ const Nav = () => {
                 Sign Up
               </Link>
             </div>
-          </div>
-        </nav>
-      )}
+          ) : (
+            <div
+              className={`flex gap-x-10 items-center ${styles.linkContainer}`}
+            >
+              <div onClick={logoutHandler} className={styles.link}>
+                Logout
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
 
       <LoginForm />
       <SignupForm />

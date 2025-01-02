@@ -13,7 +13,7 @@ const instance = axios.create({
 // Create an Axios instance for authenticated API requests
 const authInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
-  timeout: 1000,
+  // timeout: 1000,
   withCredentials: true,
 });
 
@@ -35,7 +35,7 @@ const authInstance = axios.create({
 // Create an Axios instance for FormData requests
 const formDataInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
-  timeout: 1000,
+  // timeout: false,
   headers: {
     "Content-Type": "multipart/form-data", // Set content type for FormData
   },

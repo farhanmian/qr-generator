@@ -1,0 +1,19 @@
+.inputFile {
+  width: 100%;
+  background-color: #343045;
+  height: 120px;
+  padding-top: 20px;
+  color: transparent;
+  border: 1px solid #c0b7e84d;
+  border-radius: 12px;
+  pointer-events: none;
+
+  &::selection {
+    color: none;
+    background: none;
+}
+}
+
+.inputFile::-webkit-file-upload-button {
+  display: none;
+}
