@@ -4,7 +4,7 @@ import styles from "./Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import LoginForm from "@/components/app/Forms/AuthForm/LoginForm";
 import SignupForm from "@/components/app/Forms/AuthForm/SignupForm";
 
@@ -15,6 +15,7 @@ interface Props {
 const Nav: React.FC<Props> = ({ token }) => {
   console.log(token, "tokenSap");
   const router = useRouter();
+  const pathname = usePathname();
 
   const logoutHandler = async () => {
     const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/logout`);
@@ -43,28 +44,29 @@ const Nav: React.FC<Props> = ({ token }) => {
               </div>
             </Link>
 
-          {!token?.length ? (
-            <div
-              className={`flex gap-x-10 items-center ${styles.linkContainer}`}
-            >
-              <Link href={"?auth=login"} className={styles.link}>
-                Login
-              </Link>
-              <Link href={"?auth=signup"} className={styles.link}>
-                Sign Up
-              </Link>
-            </div>
-          ) : (
-            <div
-              className={`flex gap-x-10 items-center ${styles.linkContainer}`}
-            >
-              <div onClick={logoutHandler} className={styles.link}>
-                Logout
+            {!token?.length ? (
+              <div
+                className={`flex gap-x-10 items-center ${styles.linkContainer}`}
+              >
+                <Link href={"?auth=login"} className={styles.link}>
+                  Login
+                </Link>
+                <Link href={"?auth=signup"} className={styles.link}>
+                  Sign Up
+                </Link>
               </div>
-            </div>
-          )}
-        </div>
-      </nav>
+            ) : (
+              <div
+                className={`flex gap-x-10 items-center ${styles.linkContainer}`}
+              >
+                <div onClick={logoutHandler} className={styles.link}>
+                  Logout
+                </div>
+              </div>
+            )}
+          </div>
+        </nav>
+      )}
 
       <LoginForm />
       <SignupForm />
