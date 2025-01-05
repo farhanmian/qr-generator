@@ -31,7 +31,7 @@ const list = [
     link: "website",
   },
   {
-    link: "vCard",
+    link: "vcard",
     title: "VCard Plus",
     text: "Share personalized contact details",
     icon: <IconId />,
