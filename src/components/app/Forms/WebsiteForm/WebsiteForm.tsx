@@ -14,11 +14,9 @@ import { WebsiteFormPrimary } from "./WebsiteFormPrimary";
 
 const formFields = [
   {
-    name: "url",
+    name: "",
     placeholder: "http://www.example.com",
-    col: "col-span-2",
     textArea: false,
-    rows: 1,
   },
 ];
 

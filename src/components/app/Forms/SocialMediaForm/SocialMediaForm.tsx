@@ -11,18 +11,6 @@ import AddShareButton from "@/components/partials/ConfigurationPanel/AddShareBut
 import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
 import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeScreenLogo/WelcomeScreenLogo";
 import { SocialMediaFormPrimary } from "./SocialMediaFormPrimary";
-// import AddSocialMediaChannel from "@/components/partials/ConfigurationPanel/AddSocialMediaChannel/AddSocialMediaChannel";
-// import FormTitleInput from "../../Inputs/FormTitleInput";
-// import CustomCollapse from "@/components/partials/CustomCollapse/CustomCollapse";
-// import ColorSelector from "../../ColorSelector/ColorSelector";
-// import { colors } from "@/components/constants/Colors";
-// import IconEdit from "@/components/icons/IconEdit";
-// import TemplateSelection from "../../TemplateSelection/TemplateSelection";
-// import FormPrimary from "@/components/partials/FormPrimary/FormPrimary";
-// import IconSpeakerPhone from "@/components/icons/IconSpeakerPhone";
-// import AddShareButton from "@/components/partials/AddShareButton/AddShareButton";
-// import IconSettings from "@/components/icons/IconSettings";
-// import AddSocialMediaChannel from "@/components/partials/AddSocialMediaChannel/AddSocialMediaChannel";
 
 const colorSelectorConfig = {
   colors,
@@ -32,16 +20,12 @@ const colorSelectorConfig = {
 
 const formFields = [
   {
-    name: "aboutUs",
+    name: "Headline*",
     placeholder: "Headline",
-    col: "col-span-2",
-    textArea: true,
-    rows: 1,
   },
   {
-    name: "aboutUs",
+    name: "About Us",
     placeholder: "About us",
-    col: "col-span-2",
     textArea: true,
     rows: 2,
   },

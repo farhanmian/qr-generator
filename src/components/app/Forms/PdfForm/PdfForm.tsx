@@ -22,21 +22,17 @@ import WelcomeScreenLogo from "@/components/partials/ConfigurationPanel/WelcomeS
 import CustomCheckbox from "@/components/partials/CustomCheckbox/CustomCheckbox";
 
 const formFields = [
-  { name: "company", placeholder: "Company" },
-  { name: "title", placeholder: "Title" },
+  { name: "Company", placeholder: "Name of the company or PDF owner" },
+  { name: "Title", placeholder: "Title or PDF name" },
   {
-    name: "description",
-    placeholder: "Description",
-    col: "col-span-2",
+    name: "Description",
+    placeholder: "Provide more info about your PDF",
     textArea: true,
-    rows: 1,
+    rows: 2,
   },
   {
     name: "Website",
-    placeholder: "Website",
-    col: "col-span-2",
-    textArea: true,
-    rows: 2,
+    placeholder: "www.your-website.com",
   },
 ];
 

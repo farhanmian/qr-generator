@@ -141,57 +141,57 @@ h1 {
   font-weight: 500;
 }
 
-.ant-picker{
-  background-color:#2D2C36;
+.ant-picker {
+  background-color: #2d2c36;
   border-color: #384051;
   color: #fff;
+  border-radius: 8px !important;
 
-  &:hover{
-    background-color: #2D2C36;
-  border-color: var(--secondary);
+  &:hover {
+    background-color: #2d2c36;
+    border-color: var(--secondary);
   }
 
-  input{
-
-    &::placeholder{
+  input {
+    &::placeholder {
       color: #fff !important;
     }
-
   }
 }
 
-.ant-picker-input-placeholder{
-
-  & > input{
+.ant-picker-input-placeholder {
+  & > input {
     color: #fff !important;
   }
 }
 
-.ant-picker-suffix{
+.ant-picker-suffix {
   color: #fff !important;
 }
-.ant-picker-clear{
-  color:#fff !important
+
+.ant-picker-clear {
+  color: #fff !important;
 }
-.ant-picker-focused{
-  background-color:#2D2C36 !important;
+
+.ant-picker-focused {
+  background-color: #2d2c36 !important;
   box-shadow: 0px 0px 4px 2px #c0b7e81d !important;
   border-color: var(--secondary) !important;
 }
 
-
-.ant-picker-large{
+.ant-picker-large {
   padding: 12px 16px;
+  width: 196px;
 }
 
-.ant-picker-cell-today{
-  .ant-picker-cell-inner::before{
-  border-color: #9886e7 !important;
+.ant-picker-cell-today {
+  .ant-picker-cell-inner::before {
+    border-color: #9886e7 !important;
   }
 }
 
-.ant-picker-cell-selected{
-  .ant-picker-cell-inner{
+.ant-picker-cell-selected {
+  .ant-picker-cell-inner {
     background-color: #9886e7 !important;
   }
 }

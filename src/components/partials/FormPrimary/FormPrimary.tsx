@@ -32,10 +32,11 @@ const FormPrimary: React.FC<{
   return (
     <form
       // onSubmit={handleSubmit( submitHandler)}
-      onChange={() => changeHandler && changeHandler(watch())}
-      className={`grid grid-cols-2 gap-x-4 gap-y-8 primaryFormBg rounded-xl ${
+      onChange={() => changeHandler && changeHandler(watch())} 
+      className={` primaryFormBg rounded-xl gap-y-8 gap-x-6 grid justify-items-start ${
         classes || ""
       }`}
+      style={{gridTemplateColumns:'minmax(200px ,324px) 212px'}}
     >
       {fields &&
         fields.map((item, index) => (
@@ -44,17 +45,21 @@ const FormPrimary: React.FC<{
             name={item.name}
             control={control} // Ensure control is passed
             render={({ field }) => (
-              <BasicInput
-                // placeholder="Address"
-                {...field}
-                key={index}
-                name={item.name}
-                placeholder={item.placeholder}
-                containerClassName={item.col ? item.col : "col-span-1"}
-                className={"w-[450px]"}
-                textArea={item.textArea}
-                rows={item.rows}
-              />
+              <div className={`${item.col ? `${item.col} justify-end` : "col-span-2"} flex w-full`}>
+                {item.name && <span className="max-w-[112px] w-full">
+                <p className="font-semibold text-white mb-2 mt-2">{item.name}:</p>
+                </span>}
+                <BasicInput
+                  {...field}
+                  key={index}
+                  name={item.name}
+                  placeholder={item.placeholder}
+                  containerClassName={item.col ? `w-[212px]` : " max-w-[450px] w-full"}
+                  className={"max-w-[450px] w-full"}
+                  textArea={item.textArea}
+                  rows={item.rows}
+                />
+              </div>
             )}
           />
         ))}

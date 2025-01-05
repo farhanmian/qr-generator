@@ -37,7 +37,7 @@ const BasicInput: React.FC<Props> = ({
             prepend && "rounded-l-[0px] "
           }`}
         />
-      ) : (
+      ) : ( 
         <input
           {...rest}
           className={`w-full px-4 py-3 transition-all  border border-gray-700 rounded-lg focus:outline-none bg-[#2D2C36]

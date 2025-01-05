@@ -15,25 +15,16 @@ import EventFormPrimary from "./EventFormPrimary/EventFormPrimary";
 
 const formFields = [
   {
-    name: "organizerName",
-    placeholder: "Organizer or Host Name",
-    col: "col-span-2",
+    name: "Organizer",
+    placeholder: "Company or Host Name",
   },
-  { name: "eventName", placeholder: "Name of the Event", col: "col-span-2" },
+  { name: "Title*", placeholder: "Name of the Event",  },
   {
-    name: "eventSummary",
+    name: "Summary",
     placeholder: "Write a short summary about your event",
     textArea: true,
     rows: 4,
-    col: "col-span-2",
   },
-  // { name: "eventDate", placeholder: "Event Date" },
-  // { name: "eventTime", placeholder: "Event Time" },
-  // { name: "eventAddress", placeholder: "Event Address", col: "col-span-2" },
-  // { name: "contact", placeholder: "Contact person for the event" },
-  // { name: "phone", placeholder: "Phone eg: (000) 000-0000" },
-  // { name: "email", placeholder: "Email eg: your@email.com" },
-  // { name: "website", placeholder: "Website eg: www.yourwebsite.com" },
 ];
 
 const colors = [
