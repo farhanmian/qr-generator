@@ -8,6 +8,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   login: async (payload: AuthFormData) => {
     const res = await instance.post("/auth/login", payload);
+    console.log(res, "RESPONSE");
+    // localStorage.setItem("token", res.data?.token);
   },
   signUp: async (payload: AuthFormData) => {
     const res = await instance.post("/auth/register", payload);
