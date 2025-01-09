@@ -101,70 +101,79 @@ const VcardResultComponent: React.FC<{
   };
 
   return (
-    <div className={styles.card}>
-      <div
-        className={`${styles.profileImageContainer} ${
-          imageContainerClass || ""
-        }`}
-      >
-        <div className={styles.profileImageOverlay} />
-        <img src={data.profileImage} alt="profile-img" />
-        <div className={styles.profileInfo}>
-          <h1 className={styles.profileName}>{data.name}</h1>
-          <p className={styles.profileDescription}>{data.description}</p>
-        </div>
-      </div>
+    <>
+      <div style={{ background: "#455A64" }} className="md:pt-10">
+        <div className={styles.cardCommanStyles}>
+          <div
+            className={`${styles.profileImageContainer} ${
+              imageContainerClass || ""
+            }`}
+          >
+            <div className={styles.profileImageOverlay} />
+            <img src={data.profileImage} alt="profile-img" />
+            <div className={styles.profileInfo}>
+              <h1 className={styles.profileName}>{data.name}</h1>
+              <p className={styles.profileDescription}>{data.description}</p>
+            </div>
+          </div>
 
-      <div className={styles.instantContactContainer}>
-        <a href={`tel:${data.phone}`} className={styles.instantContactItem}>
-          <IconPhone />
-          <p>Call</p>
-        </a>
+          <div className={styles.instantContactContainer}>
+            <a href={`tel:${data.phone}`} className={styles.instantContactItem}>
+              <IconPhone />
+              <p>Call</p>
+            </a>
 
-        <a href={`mailto:${data.email}`} className={styles.instantContactItem}>
-          <IconSend2 />
-          <p>Email</p>
-        </a>
-      </div>
-
-      <div className={`${styles.contactDetailsContainer}`}>
-        <div className={styles.contactDetailsInnerContainer}>
-          <h2>Contact me</h2>
-
-          <div className={styles.contactDetailsList}>
-            {contactDetails.map((item) => (
-              <div key={item.title} className={styles.contactDetailsItem}>
-                {item.icon}
-                <div>
-                  <a href={item.href || ""}>{item.text}</a>
-                  <p>{item.title}</p>
-                </div>
-              </div>
-            ))}
+            <a
+              href={`mailto:${data.email}`}
+              className={styles.instantContactItem}
+            >
+              <IconSend2 />
+              <p>Email</p>
+            </a>
           </div>
         </div>
       </div>
 
-      <div
-        className={`${styles.contactDetailsContainer} ${styles.socialContainer}`}
-      >
-        <div className={styles.contactDetailsInnerContainer}>
-          <h2>Social Links</h2>
+      <div className={`${styles.cardCommanStyles} text-gray-700`}>
+        <div className={`${styles.contactDetailsContainer}`}>
+          <div className={styles.contactDetailsInnerContainer}>
+            {/* <h2>Contact me</h2> */}
 
-          <a
-            href={data.linkedin}
-            target="_blank"
-            className={styles.socialContainerList}
-          >
-            <LinkedinIcon />
-          </a>
+            <div className={styles.contactDetailsList}>
+              {contactDetails.map((item) => (
+                <div key={item.title} className={styles.contactDetailsItem}>
+                  {item.icon}
+                  <div>
+                    <a href={item.href || ""}>{item.text}</a>
+                    <p>{item.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.contactDetailsContainer} ${styles.socialContainer}`}
+        >
+          <div className={styles.contactDetailsInnerContainer}>
+            <h2>Social Links</h2>
+
+            <a
+              href={data.linkedin}
+              target="_blank"
+              className={styles.socialContainerList}
+            >
+              <LinkedinIcon />
+            </a>
+          </div>
         </div>
       </div>
 
       <button onClick={handleAddContact} className={styles.addContactButton}>
         <IconUserPlus />
       </button>
-    </div>
+    </>
   );
 };
 

@@ -12,9 +12,9 @@ const arjunData = {
 
 const page = () => {
   return (
-    <>
+    <section className="bg-white">
       <VcardResultComponent data={arjunData} />
-    </>
+    </section>
   );
 };
 
